@@ -133,24 +133,22 @@
   .cta-band p{color:var(--ink-soft);font-size:0.96rem;max-width:46ch;}
   .cta-band .cta-row{margin-top:0;flex-shrink:0;}
 
-  /* ---------- LAYOUT SHELL / TOC RAIL ---------- */
-  .shell{display:grid;grid-template-columns:220px 1fr;gap:0;max-width:1400px;margin:0 auto;}
-  .rail{padding:64px 24px 64px 28px;}
-  .rail-inner{position:sticky;top:32px;}
-  .rail-title{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;}
-  .rail a{
-    display:block;padding:7px 0;font-size:0.88rem;color:var(--ink-soft);
-    border-left:2px solid transparent;padding-left:14px;margin-left:-15px;
-    text-decoration:none;transition:color .15s ease, border-color .15s ease;
+  /* ---------- TOP NAV ---------- */
+  .topnav{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);}
+  .topnav-main{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0 12px;}
+  .topnav-brand{font-family:'Source Serif 4',serif;font-weight:600;font-size:1.02rem;color:var(--ink);text-decoration:none;white-space:nowrap;}
+  .topnav-links{display:flex;gap:8px;overflow-x:auto;padding:0 0 14px;scrollbar-width:none;}
+  .topnav-links::-webkit-scrollbar{display:none;}
+  .topnav-links a{
+    flex-shrink:0;font-size:0.82rem;font-weight:600;color:var(--ink-soft);
+    padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;
+    transition:color .15s ease, border-color .15s ease, background-color .15s ease;
   }
-  .rail a:hover{color:var(--ink);}
-  .rail a.active{color:var(--moss-deep);border-left-color:var(--moss);font-weight:600;}
-  .rail-emergency{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);}
-  .rail-emergency a{color:var(--crisis-ink);font-size:0.82rem;font-weight:600;}
-
-  .mobile-toc{display:none;}
-
-  .main-col{min-width:0;border-left:1px solid var(--line);}
+  .topnav-links a:hover{color:var(--ink);border-color:var(--moss);}
+  .topnav-links a.active{background:var(--moss-deep);color:#F6F6EE;border-color:var(--moss-deep);}
+  :root[data-theme="dark"] .topnav-links a.active{color:#141A15;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .topnav-links a.active{color:#141A15;}}
+  .topnav-main .btn{flex-shrink:0;padding:10px 18px;font-size:0.86rem;}
 
   /* ---------- HERO ---------- */
   .hero{padding:76px 0 60px;border-bottom:none;position:relative;overflow:hidden;}
@@ -312,20 +310,9 @@
   footer{padding:48px 0 64px;}
   footer .container-wide{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;color:var(--ink-faint);font-size:0.82rem;}
 
-  @media (max-width:1000px){
-    .shell{grid-template-columns:1fr;}
-    .rail{display:none;}
-    .main-col{border-left:none;}
-    .mobile-toc{
-      display:block;position:sticky;top:0;z-index:5;background:var(--paper);
-      border-bottom:1px solid var(--line);padding:12px 0;overflow-x:auto;
-    }
-    .mobile-toc .container-wide{display:flex;gap:8px;padding:0 20px;}
-    .mobile-toc a{
-      flex-shrink:0;font-size:0.82rem;font-weight:600;color:var(--ink-soft);
-      padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;
-    }
-    .mobile-toc a.active{background:var(--moss-deep);color:#F6F6EE;border-color:var(--moss-deep);}
+  @media (max-width:640px){
+    .topnav-main{flex-wrap:wrap;}
+    .topnav-main .btn{order:3;width:100%;justify-content:center;}
   }
 
   @media (max-width:860px){
@@ -355,40 +342,26 @@
   }
 </style>
 
-<div class="safety-notice">
-  <div class="container-wide">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16.2" r="0.9" fill="var(--crisis-ink)" stroke="none"/></svg>
-    <p>If you are experiencing a mental health crisis or are at immediate risk of harm, contact local emergency services or the nearest emergency facility now rather than relying on this page.</p>
+
+<header class="topnav">
+  <div class="container-wide topnav-main">
+    <a class="topnav-brand" href="#top">The Cabin — Depression Retreat Thailand</a>
+    <a class="btn btn-primary" href="https://www.thecabinchiangmai.com/pricing/">Explore Treatment Options</a>
   </div>
-</div>
-
-<div class="mobile-toc">
-  <div class="container-wide" id="mobile-toc-links"></div>
-</div>
-
-<div class="shell">
-
-  <aside class="rail">
-    <div class="rail-inner">
-      <div class="rail-title">On This Page</div>
-      <nav id="toc">
-        <a href="#how-it-helps">How It Helps</a>
-        <a href="#treatment-includes">What's Included</a>
-        <a href="#therapies">Therapies</a>
-        <a href="#conditions">Related Conditions</a>
-        <a href="#daily-life">Daily Life</a>
-        <a href="#why-thailand">Why Thailand</a>
-        <a href="#is-it-right">Is It Right for You</a>
-        <a href="#after-treatment">After Treatment</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="rail-emergency">
-        <a href="#top">Read the crisis notice ↑</a>
-      </div>
-    </div>
-  </aside>
-
-  <div class="main-col">
+  <div class="container-wide">
+    <nav class="topnav-links" id="toc">
+      <a href="#how-it-helps">How It Helps</a>
+      <a href="#treatment-includes">What's Included</a>
+      <a href="#therapies">Therapies</a>
+      <a href="#conditions">Related Conditions</a>
+      <a href="#daily-life">Daily Life</a>
+      <a href="#why-thailand">Why Thailand</a>
+      <a href="#is-it-right">Is It Right for You</a>
+      <a href="#after-treatment">After Treatment</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
 
     <div class="hero-block">
     <section class="hero" id="top" style="padding-top:56px;">
@@ -1198,24 +1171,11 @@
       </div>
     </footer>
 
-  </div>
-</div>
-
 <script>
-  // mobile toc mirrors desktop rail
-  (function(){
-    var rail = document.getElementById('toc');
-    var mobile = document.getElementById('mobile-toc-links');
-    rail.querySelectorAll('a').forEach(function(a){
-      var clone = a.cloneNode(true);
-      mobile.appendChild(clone);
-    });
-  })();
-
   // scroll-spy active state
   (function(){
     var sections = Array.from(document.querySelectorAll('section[id]'));
-    var links = Array.from(document.querySelectorAll('.rail a, .mobile-toc a'));
+    var links = Array.from(document.querySelectorAll('.topnav-links a'));
     if (!('IntersectionObserver' in window)) return;
     var obs = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){

@@ -1,0 +1,1246 @@
+<title>Depression Retreat Thailand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ================= TOKENS ================= */
+  :root{
+    --paper:#EAEBDF;
+    --paper-panel:#F6F6EE;
+    --paper-deep:#DEE0CC;
+    --line:#D1D2BC;
+    --ink:#1E2820;
+    --ink-soft:#4C5A4C;
+    --ink-faint:#7C8873;
+    --moss:#4E6B4C;
+    --moss-deep:#334730;
+    --moss-pale:#DCE6D2;
+    --gold:#A07E3B;
+    --gold-pale:#EFE3C3;
+    --crisis-ink:#6E3B29;
+    --crisis-bg:#EFDFD2;
+    --crisis-line:#DCC2AC;
+    --shadow: 0 18px 40px -26px rgba(30,40,32,0.35);
+    --focus:#334730;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141A15;
+      --paper-panel:#1B221C;
+      --paper-deep:#232B22;
+      --line:#313B30;
+      --ink:#E9EBE1;
+      --ink-soft:#B7C1B0;
+      --ink-faint:#82907E;
+      --moss:#8FAE86;
+      --moss-deep:#B9D2AF;
+      --moss-pale:#26311F;
+      --gold:#D2AD73;
+      --gold-pale:#332A18;
+      --crisis-ink:#E6C8B4;
+      --crisis-bg:#2E2119;
+      --crisis-line:#4A362A;
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
+      --focus:#B9D2AF;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141A15;
+    --paper-panel:#1B221C;
+    --paper-deep:#232B22;
+    --line:#313B30;
+    --ink:#E9EBE1;
+    --ink-soft:#B7C1B0;
+    --ink-faint:#82907E;
+    --moss:#8FAE86;
+    --moss-deep:#B9D2AF;
+    --moss-pale:#26311F;
+    --gold:#D2AD73;
+    --gold-pale:#332A18;
+    --crisis-ink:#E6C8B4;
+    --crisis-bg:#2E2119;
+    --crisis-line:#4A362A;
+    --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
+    --focus:#B9D2AF;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+    text-wrap:balance;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  ul{margin:0;padding:0;list-style:none;}
+  img,svg{display:block;max-width:100%;}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    font-weight:500;
+    letter-spacing:0.11em;
+    text-transform:uppercase;
+    color:var(--moss);
+  }
+
+  .container{max-width:760px;margin:0 auto;padding:0 28px;}
+  .container-wide{max-width:1140px;margin:0 auto;padding:0 28px;}
+
+  section{padding:88px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  .section-head{max-width:660px;margin-bottom:48px;}
+  .section-head .eyebrow{margin-bottom:14px;display:block;}
+  .section-head h2{font-size:clamp(1.65rem,2.6vw,2.15rem);line-height:1.24;letter-spacing:-0.01em;}
+  .section-head .dek{margin-top:18px;font-size:1.05rem;color:var(--ink-soft);max-width:64ch;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;border-radius:3px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:0.95rem;font-weight:600;
+    text-decoration:none;white-space:nowrap;
+    transition:background-color .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-primary{background:var(--moss-deep);color:#F6F6EE;border:1px solid var(--moss-deep);}
+  .btn-primary:hover{background:var(--moss);border-color:var(--moss);}
+  :root[data-theme="dark"] .btn-primary{color:#141A15;}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .btn-primary{color:#141A15;} }
+  .btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .btn-secondary:hover{border-color:var(--moss);color:var(--moss-deep);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+
+  .cta-band{
+    margin-top:56px;padding:40px 40px;border-radius:4px;
+    background:var(--paper-panel);border:1px solid var(--line);
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .cta-band h3{font-size:1.2rem;margin-bottom:6px;}
+  .cta-band p{color:var(--ink-soft);font-size:0.96rem;max-width:46ch;}
+  .cta-band .cta-row{margin-top:0;flex-shrink:0;}
+
+  /* ---------- LAYOUT SHELL / TOC RAIL ---------- */
+  .shell{display:grid;grid-template-columns:220px 1fr;gap:0;max-width:1400px;margin:0 auto;}
+  .rail{padding:64px 24px 64px 28px;}
+  .rail-inner{position:sticky;top:32px;}
+  .rail-title{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;}
+  .rail a{
+    display:block;padding:7px 0;font-size:0.88rem;color:var(--ink-soft);
+    border-left:2px solid transparent;padding-left:14px;margin-left:-15px;
+    text-decoration:none;transition:color .15s ease, border-color .15s ease;
+  }
+  .rail a:hover{color:var(--ink);}
+  .rail a.active{color:var(--moss-deep);border-left-color:var(--moss);font-weight:600;}
+  .rail-emergency{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);}
+  .rail-emergency a{color:var(--crisis-ink);font-size:0.82rem;font-weight:600;}
+
+  .mobile-toc{display:none;}
+
+  .main-col{min-width:0;border-left:1px solid var(--line);}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 60px;border-bottom:none;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 0.9fr;gap:56px;align-items:center;}
+  .hero h1{font-size:clamp(2.1rem,3.6vw,2.85rem);line-height:1.16;letter-spacing:-0.015em;}
+  .hero .eyebrow{margin-bottom:16px;display:block;}
+  .hero-lede{margin-top:22px;font-size:1.08rem;color:var(--ink-soft);max-width:52ch;}
+
+  .contour{position:relative;aspect-ratio:4/5;border-radius:58% 42% 38% 62% / 55% 40% 60% 45%;overflow:hidden;background:var(--h-sand);box-shadow:var(--shadow);}
+  .contour svg{width:100%;height:100%;display:block;}
+
+  /* ---------- HERO BLOCK (matches source artifact) ---------- */
+  .hero-block{
+    --h-ink:#223027; --h-ink-soft:#4A594E; --h-bg-panel:#FBFAF6;
+    --h-sage:#5F7A64; --h-sage-deep:#3F5647; --h-teal:#3E5C58;
+    --h-sand:#E4DCC8; --h-line:#DBD5C4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .hero-block{
+      --h-ink:#E9EBE1; --h-ink-soft:#B7C1B0; --h-bg-panel:#1B221C;
+      --h-sage:#8FAE86; --h-sage-deep:#B9D2AF; --h-teal:#9BC2BC;
+      --h-sand:#26311F; --h-line:#313B30;
+    }
+  }
+  :root[data-theme="dark"] .hero-block{
+    --h-ink:#E9EBE1; --h-ink-soft:#B7C1B0; --h-bg-panel:#1B221C;
+    --h-sage:#8FAE86; --h-sage-deep:#B9D2AF; --h-teal:#9BC2BC;
+    --h-sand:#26311F; --h-line:#313B30;
+  }
+  .hero-block .intro,.hero-block .overview{font-family:'Karla',sans-serif;}
+  .hero-block .intro h2{font-family:'Fraunces',serif;font-weight:500;color:var(--h-ink);font-size:clamp(1.5rem,2.2vw,1.9rem);line-height:1.25;}
+  .intro{padding:8px 0 0;border-bottom:none;}
+  .intro-header{max-width:640px;}
+  .intro-body{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:36px;}
+  .intro-body p{margin:0;color:var(--h-ink-soft);font-size:0.98rem;}
+  .intro-body p strong{display:block;color:var(--h-ink);font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;margin-bottom:8px;}
+  .overview{padding:44px 0 88px;border-bottom:1px solid var(--line);}
+  .overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--h-line);border:1px solid var(--h-line);border-radius:4px;overflow:hidden;}
+  .overview-card{background:var(--h-bg-panel);padding:26px 22px;border-left:3px solid var(--h-sage);}
+  .overview-card:nth-child(2),.overview-card:nth-child(4){border-left-color:var(--h-teal);}
+  .overview-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;margin:0 0 8px;color:var(--h-ink);}
+  .overview-card p{margin:0;font-size:0.9rem;color:var(--h-ink-soft);}
+
+  .safety-notice{background:var(--crisis-bg);border-bottom:1px solid var(--crisis-line);}
+  .safety-notice .container-wide{padding-top:16px;padding-bottom:16px;display:flex;gap:12px;align-items:flex-start;}
+  .safety-notice svg{flex-shrink:0;margin-top:2px;width:18px;height:18px;stroke:var(--crisis-ink);}
+  .safety-notice p{font-size:0.9rem;color:var(--crisis-ink);line-height:1.55;}
+
+  /* ---------- ICON WELL (shared) ---------- */
+  .icon-well{width:42px;height:42px;border-radius:10px;background:var(--moss-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .icon-well svg{width:22px;height:22px;stroke:var(--moss-deep);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust-strip{padding:40px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .trust-item{background:var(--paper-panel);padding:22px 20px;display:flex;align-items:center;gap:14px;}
+  .trust-item .label{font-size:0.93rem;font-weight:600;}
+  .trust-note{margin-top:16px;font-size:0.82rem;color:var(--ink-faint);max-width:60ch;}
+
+  /* ---------- PILLAR GRID (reusable) ---------- */
+  .pillar-grid{display:grid;gap:22px;}
+  .pillar-grid.cols-5{grid-template-columns:repeat(5,1fr);}
+  .pillar-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+  .pillar-card{background:var(--paper-panel);border:1px solid var(--line);border-radius:4px;padding:26px 22px;}
+  .pillar-card .idx{font-family:'Source Serif 4',serif;font-size:1.7rem;color:var(--moss-pale);font-weight:600;line-height:1;margin-bottom:14px;}
+  :root[data-theme="dark"] .pillar-card .idx{color:var(--moss-deep);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pillar-card .idx{color:var(--moss-deep);}}
+  .pillar-card h3{font-size:1.05rem;margin-bottom:9px;}
+  .pillar-card p{font-size:0.92rem;color:var(--ink-soft);}
+
+  /* ---------- PROCESS CARDS (expandable) ---------- */
+  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .process-card{background:var(--paper-panel);border:1px solid var(--line);border-radius:4px;padding:0;}
+  .process-card .p-head{padding:26px 24px 20px;}
+  .process-card .p-num{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--gold);letter-spacing:0.06em;margin-bottom:12px;}
+  .process-card h3{font-size:1.12rem;margin-bottom:8px;}
+  .process-card .p-def{font-size:0.93rem;color:var(--ink-soft);}
+  .process-card details summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;
+    padding:14px 24px;border-top:1px solid var(--line);
+    font-size:0.86rem;font-weight:600;color:var(--moss-deep);
+  }
+  .process-card details summary::-webkit-details-marker{display:none;}
+  .process-card details summary .chev{transition:transform .2s ease;flex-shrink:0;width:13px;height:13px;stroke:currentColor;}
+  .process-card details[open] summary .chev{transform:rotate(180deg);}
+  .process-card .p-body{padding:4px 24px 24px;font-size:0.9rem;color:var(--ink-soft);}
+  .process-card .p-body ul{margin-top:8px;}
+  .process-card .p-body li{position:relative;padding-left:16px;margin-bottom:6px;}
+  .process-card .p-body li::before{content:"–";position:absolute;left:0;color:var(--moss);}
+
+  /* ---------- CALLOUT ---------- */
+  .callout{margin-top:44px;background:var(--gold-pale);border:1px solid var(--line);border-radius:4px;padding:28px 30px;max-width:760px;}
+  .callout h4{font-size:1.02rem;margin-bottom:10px;color:var(--ink);}
+  .callout p{color:var(--ink-soft);font-size:0.94rem;}
+  .callout p + p{margin-top:8px;}
+
+  /* ---------- CHECKLIST ---------- */
+  .checklist li{position:relative;padding:10px 0 10px 30px;font-size:0.96rem;color:var(--ink-soft);border-bottom:1px solid var(--line);}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{content:"";position:absolute;left:0;top:14px;width:14px;height:14px;border:1.5px solid var(--moss);border-radius:3px;}
+  .checklist li strong{color:var(--ink);}
+
+  /* ---------- TIMELINE (daily life) ---------- */
+  .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:8px;}
+  .timeline::before{content:"";position:absolute;top:13px;left:6%;right:6%;height:1px;background:repeating-linear-gradient(to right,var(--line) 0 8px, transparent 8px 15px);}
+  .t-step{position:relative;padding-top:36px;padding-right:16px;}
+  .t-step .dot{position:absolute;top:6px;left:0;width:14px;height:14px;border-radius:50%;background:var(--moss);border:3px solid var(--paper);box-shadow:0 0 0 1px var(--line);}
+  .t-step .t-label{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--moss-deep);letter-spacing:0.05em;margin-bottom:6px;}
+  .t-step h4{font-size:0.98rem;margin-bottom:6px;}
+  .t-step p{font-size:0.87rem;color:var(--ink-soft);}
+  .timeline-note{margin-top:22px;font-size:0.82rem;color:var(--ink-faint);font-style:italic;}
+
+  .info-quad{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px;}
+  .info-block h4{font-size:1.02rem;margin-bottom:10px;}
+  .info-block p{font-size:0.93rem;color:var(--ink-soft);}
+  .balanced-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .balanced-chip{font-size:0.86rem;font-weight:600;background:var(--moss-pale);color:var(--moss-deep);padding:8px 16px;border-radius:999px;}
+
+  /* ---------- CONSIDER LIST ---------- */
+  .consider-list{margin-top:20px;}
+  .consider-list li{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:140px 1fr;gap:18px;font-size:0.94rem;color:var(--ink-soft);}
+  .consider-list li:first-child{padding-top:0;}
+  .consider-list li strong{color:var(--ink);font-family:'Source Serif 4',serif;font-weight:600;font-size:0.98rem;}
+
+  /* ---------- RETURNING STEPS ---------- */
+  .return-strip{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin-top:8px;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .return-step{flex:1;min-width:180px;padding:22px 22px;background:var(--paper-panel);}
+  .return-step + .return-step{border-left:1px solid var(--line);}
+  .return-step .r-num{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--gold);}
+  .return-step h4{font-size:1rem;margin:8px 0 6px;}
+  .return-step p{font-size:0.88rem;color:var(--ink-soft);}
+
+  /* ---------- FAQ ---------- */
+  .faq-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+  .faq-tab{
+    padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--paper-panel);
+    font-size:0.88rem;font-weight:600;color:var(--ink-soft);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;
+  }
+  .faq-tab[aria-selected="true"]{background:var(--moss-deep);border-color:var(--moss-deep);color:#F6F6EE;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .faq-tab[aria-selected="true"]{color:#141A15;}}
+  :root[data-theme="dark"] .faq-tab[aria-selected="true"]{color:#141A15;}
+  .faq-panel{display:none;}
+  .faq-panel.active{display:block;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-item summary{list-style:none;cursor:pointer;padding:20px 4px;display:flex;justify-content:space-between;gap:16px;align-items:flex-start;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary h2,.faq-item summary h3,.faq-item summary h4{font-family:'Source Serif 4',serif;font-weight:600;color:var(--ink);margin:0;}
+  .faq-item summary h2{font-size:1.12rem;}
+  .faq-item summary h3{font-size:1.02rem;font-weight:500;}
+  .faq-item summary h4{font-size:0.96rem;font-weight:500;color:var(--ink-soft);}
+  .faq-item summary .plus{flex-shrink:0;width:20px;height:20px;position:relative;margin-top:3px;}
+  .faq-item summary .plus::before,.faq-item summary .plus::after{content:"";position:absolute;background:var(--moss-deep);border-radius:1px;}
+  .faq-item summary .plus::before{top:9px;left:2px;right:2px;height:2px;}
+  .faq-item summary .plus::after{left:9px;top:2px;bottom:2px;width:2px;transition:transform .18s ease;}
+  .faq-item[open] summary .plus::after{transform:scaleY(0);}
+  .faq-item .faq-a{padding:0 4px 22px;font-size:0.95rem;color:var(--ink-soft);max-width:68ch;}
+
+  footer{padding:48px 0 64px;}
+  footer .container-wide{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;color:var(--ink-faint);font-size:0.82rem;}
+
+  @media (max-width:1000px){
+    .shell{grid-template-columns:1fr;}
+    .rail{display:none;}
+    .main-col{border-left:none;}
+    .mobile-toc{
+      display:block;position:sticky;top:0;z-index:5;background:var(--paper);
+      border-bottom:1px solid var(--line);padding:12px 0;overflow-x:auto;
+    }
+    .mobile-toc .container-wide{display:flex;gap:8px;padding:0 20px;}
+    .mobile-toc a{
+      flex-shrink:0;font-size:0.82rem;font-weight:600;color:var(--ink-soft);
+      padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;
+    }
+    .mobile-toc a.active{background:var(--moss-deep);color:#F6F6EE;border-color:var(--moss-deep);}
+  }
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .contour{max-width:240px;order:-1;}
+    .pillar-grid.cols-5,.pillar-grid.cols-3{grid-template-columns:1fr 1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    .trust-grid{grid-template-columns:1fr 1fr;}
+    .timeline{grid-template-columns:1fr;gap:22px;}
+    .timeline::before{display:none;}
+    .info-quad{grid-template-columns:1fr;}
+    .consider-list li{grid-template-columns:1fr;gap:6px;}
+    .return-step{flex:1 1 100%;}
+    .return-step + .return-step{border-left:none;border-top:1px solid var(--line);}
+    .cta-band{flex-direction:column;align-items:flex-start;}
+  }
+
+  @media (max-width:560px){
+    .container,.container-wide{padding:0 20px;}
+    section{padding:60px 0;}
+    .pillar-grid.cols-5,.pillar-grid.cols-3,.trust-grid{grid-template-columns:1fr;}
+    .cta-row{flex-direction:column;align-items:stretch;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+
+<div class="safety-notice">
+  <div class="container-wide">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16.2" r="0.9" fill="var(--crisis-ink)" stroke="none"/></svg>
+    <p>If you are experiencing a mental health crisis or are at immediate risk of harm, contact local emergency services or the nearest emergency facility now rather than relying on this page.</p>
+  </div>
+</div>
+
+<div class="mobile-toc">
+  <div class="container-wide" id="mobile-toc-links"></div>
+</div>
+
+<div class="shell">
+
+  <aside class="rail">
+    <div class="rail-inner">
+      <div class="rail-title">On This Page</div>
+      <nav id="toc">
+        <a href="#how-it-helps">How It Helps</a>
+        <a href="#treatment-includes">What's Included</a>
+        <a href="#therapies">Therapies</a>
+        <a href="#conditions">Related Conditions</a>
+        <a href="#daily-life">Daily Life</a>
+        <a href="#why-thailand">Why Thailand</a>
+        <a href="#is-it-right">Is It Right for You</a>
+        <a href="#after-treatment">After Treatment</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="rail-emergency">
+        <a href="#top">Read the crisis notice ↑</a>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main-col">
+
+    <div class="hero-block">
+    <section class="hero" id="top" style="padding-top:56px;">
+      <div class="container-wide hero-grid">
+        <div>
+          <span class="eyebrow">Residential Mental Health Care · Thailand</span>
+          <h1>Depression and Mental Health Retreat in Thailand</h1>
+          <p class="hero-lede">
+            A mental health retreat in Thailand can offer a structured, private environment for people seeking
+            dedicated support for depression and related concerns. Residential programs may combine professional
+            assessment, individual and group therapy, steady daily routines, and wellbeing-focused activities,
+            tailored to what each person needs.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#treatment-includes">Explore Treatment Options</a>
+            <a class="btn btn-secondary" href="#faq">Speak With Our Team</a>
+          </div>
+        </div>
+        <div class="contour" aria-hidden="true">
+          <svg viewBox="0 0 320 320" fill="none">
+            <circle cx="225" cy="72" r="30" fill="var(--gold-pale)" stroke="var(--gold)" stroke-width="1.4"/>
+            <circle cx="225" cy="72" r="18" fill="var(--gold)" opacity="0.45"/>
+            <circle cx="88" cy="98" r="2" fill="var(--ink-faint)"/>
+            <circle cx="104" cy="90" r="1.6" fill="var(--ink-faint)"/>
+            <circle cx="120" cy="100" r="1.4" fill="var(--ink-faint)"/>
+            <path d="M0 152 C45 130 95 142 160 138 C220 134 270 150 320 138 L320 320 L0 320 Z" fill="var(--moss-pale)"/>
+            <path d="M0 178 C55 156 110 170 175 162 C230 154 280 172 320 162 L320 320 L0 320 Z" fill="var(--moss)" opacity="0.55"/>
+            <path d="M0 204 C65 180 130 194 195 184 C245 176 285 192 320 184 L320 320 L0 320 Z" fill="var(--moss)" opacity="0.85"/>
+            <path d="M0 232 C80 208 155 222 210 210 C255 202 290 216 320 208 L320 320 L0 320 Z" fill="var(--moss-deep)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container-wide">
+        <div class="intro-header">
+          <h2>Depression and Mental Health Retreats in Thailand</h2>
+        </div>
+        <div class="intro-body">
+          <p>
+            <strong>What the retreat is</strong>
+            A residential mental health retreat can provide a structured setting where individuals temporarily
+            step away from everyday responsibilities to focus on treatment, rest, and wellbeing, supported by a
+            consistent daily routine.
+          </p>
+          <p>
+            <strong>Who it may be for</strong>
+            Programs like this may be suitable for adults experiencing depression or related mental health
+            concerns who may benefit from structured residential support. This isn't a fit for everyone, and
+            suitability depends on individual assessment.
+          </p>
+          <p>
+            <strong>What treatment may involve</strong>
+            Depending on the person and provider, care can include mental health assessment, individual and
+            group therapy, cognitive and behavioral approaches, mindfulness or relaxation practices where
+            offered, healthy daily routines, and planning for continuing or aftercare once residential treatment
+            ends.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="container-wide">
+        <div class="overview-grid">
+          <div class="overview-card">
+            <h3>Depression Support</h3>
+            <p>Professional assessment and therapeutic support for people experiencing depression.</p>
+          </div>
+          <div class="overview-card">
+            <h3>Residential Care</h3>
+            <p>A structured environment where clients can focus on treatment and wellbeing.</p>
+          </div>
+          <div class="overview-card">
+            <h3>Therapy &amp; Recovery</h3>
+            <p>Individualized therapy and recovery-focused strategies based on personal needs.</p>
+          </div>
+          <div class="overview-card">
+            <h3>Continuing Support</h3>
+            <p>Aftercare and ongoing support can help individuals continue their recovery after residential treatment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <section class="trust-strip" aria-label="Trust and credentials" style="padding-top:52px;">
+      <div class="container-wide">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <span class="icon-well" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.2"/><path d="M9.3 9l1.8 1.8 3.6-3.8"/><path d="M9 13.7l-2 6.3 5-2.6 5 2.6-2-6.3"/></svg></span>
+            <span class="label">Licensed Clinical Team</span>
+          </div>
+          <div class="trust-item">
+            <span class="icon-well" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6 10.3V20h12v-9.7"/><path d="M10 20v-5.5h4V20"/></svg></span>
+            <span class="label">Private Residential Setting</span>
+          </div>
+          <div class="trust-item">
+            <span class="icon-well" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="12" r="7"/><ellipse cx="11" cy="12" rx="3" ry="7"/><path d="M4.2 12h13.6"/><path d="M16.5 15.5l3.5 1.6-1 3.4-3-1.6z"/></svg></span>
+            <span class="label">International Patient Support</span>
+          </div>
+          <div class="trust-item">
+            <span class="icon-well" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4.5" width="12" height="16" rx="2"/><path d="M9.5 3.5h5v3h-5z"/><path d="M9 12.5l2 2 4-4"/><path d="M9 17h4"/></svg></span>
+            <span class="label">Structured Aftercare Planning</span>
+          </div>
+        </div>
+        <p class="trust-note">Trust markers and patient outcomes should reflect a facility's actual accreditations and services — verify credentials directly with any provider before enrolling.</p>
+      </div>
+    </section>
+
+    <section id="how-it-helps">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">01 — How Treatment Works</span>
+          <h2>How can a Mental Health Retreat in Thailand Help With Depression?</h2>
+          <p class="dek">A mental health retreat in Thailand helps with depression through structured care, professional support, therapeutic intervention, healthy routines, and space away from everyday pressures — each addressing a different part of recovery within a supervised residential setting.</p>
+        </div>
+
+        <div class="pillar-grid cols-5">
+          <div class="pillar-card">
+            <div class="idx">01</div>
+            <h3>Structured Care</h3>
+            <p>Daily activities are organized around therapy, rest, and wellness practices. Consistent scheduling can reduce uncertainty and support emotional stability throughout recovery.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">02</div>
+            <h3>Professional Support</h3>
+            <p>Licensed therapists and medical staff monitor progress on an ongoing basis, adjusting treatment plans based on patient needs and observed symptoms.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">03</div>
+            <h3>Therapeutic Intervention</h3>
+            <p>Individual counseling and group sessions target depressive symptoms directly, using evidence-based approaches to process emotions and build coping strategies.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">04</div>
+            <h3>Healthy Routine</h3>
+            <p>Balanced meals, physical activity, and regular sleep restore basic daily habits that support both physical health and emotional regulation.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">05</div>
+            <h3>Space Away From Pressures</h3>
+            <p>Distance from familiar stressors and triggers allows greater focus on reflection and healing, away from routine obligations.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <h4>Treatment Is Personal</h4>
+          <p>Residential treatment does not suit every patient experiencing depression. The appropriate level of care depends on symptom severity, personal circumstances, clinical needs, and professional assessment.</p>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Explore Depression Treatment in Thailand</h3>
+            <p>Find details on residential mental health programs, therapeutic methods, and long-term support services.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#treatment-includes">Explore Depression Treatment</a>
+            <a class="btn btn-secondary" href="#faq">Speak With Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="treatment-includes">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">02 — The Program</span>
+          <h2>What does Depression Treatment at a Retreat Include?</h2>
+          <p class="dek">Treatment begins with a thorough evaluation and progresses through personalized planning, therapy, and monitoring. Recovery planning and continuing support typically follow residential care.</p>
+        </div>
+
+        <ul class="checklist" style="margin-bottom:52px;max-width:720px;">
+          <li><strong>Mental Health Assessment</strong> — a qualified professional reviews symptoms, history, and current circumstances during intake.</li>
+          <li><strong>Personalized Treatment Plan</strong> — the clinical team builds a plan based on assessment results and personal circumstances.</li>
+          <li><strong>Ongoing Clinical Support</strong> — regular contact with qualified professionals allows continuous monitoring of symptoms and well-being.</li>
+          <li><strong>Therapy and Therapeutic Support</strong> — psychotherapy and related approaches address emotional patterns and underlying causes.</li>
+          <li><strong>Progress Monitoring</strong> — progress is reviewed at intervals, with adjustments made whenever clinical needs change.</li>
+          <li><strong>Recovery Planning</strong> — coping strategies and routines are identified for life after residential care.</li>
+          <li><strong>Aftercare and Continuing Support</strong> — follow-up appointments and recommended services extend care beyond the stay.</li>
+        </ul>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="p-head">
+              <div class="p-num">STEP 01</div>
+              <h3>Mental Health Assessment</h3>
+              <p class="p-def">A licensed clinician evaluates symptoms, personal history, and current circumstances during intake, establishing the foundation for treatment planning.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Review of present symptoms</li>
+                  <li>Prior mental health and treatment background</li>
+                  <li>Existing medications or ongoing therapies</li>
+                  <li>Evaluation of daily functioning and well-being</li>
+                  <li>Discussion of expectations for care</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <article class="process-card">
+            <div class="p-head">
+              <div class="p-num">STEP 02</div>
+              <h3>Personalized Treatment Plan</h3>
+              <p class="p-def">The clinical team reviews assessment findings and builds a treatment structure around patient circumstances and goals, adjusted as progress continues.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Selection of therapy types</li>
+                  <li>Scheduling of sessions and daily activities</li>
+                  <li>Consideration of personal history and triggers</li>
+                  <li>Alignment with treatment goals</li>
+                  <li>Adjustments based on clinical input</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <article class="process-card">
+            <div class="p-head">
+              <div class="p-num">STEP 03</div>
+              <h3>Ongoing Clinical Support</h3>
+              <p class="p-def">Qualified staff maintain regular contact throughout the stay to track symptoms and overall well-being, responding to concerns as they arise.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Scheduled check-ins with clinical staff</li>
+                  <li>Monitoring of symptom changes</li>
+                  <li>Review of therapy effectiveness</li>
+                  <li>Adjustments to daily routines</li>
+                  <li>Coordination between care team members</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+        </div>
+
+        <div class="callout">
+          <h4>Treatment Is Individualized</h4>
+          <p>Treatment methods, pacing, and the frequency of clinical contact can differ from person to person. A licensed professional should tailor the approach based on patient needs, since results vary by case.</p>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Learn More About Depression Treatment</h3>
+            <p>Discover therapy methods, residential support, and aftercare resources available for depression treatment in Thailand.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#therapies">Explore Depression Treatment</a>
+            <a class="btn btn-secondary" href="#faq">Speak With Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="therapies">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">03 — Therapeutic Approaches</span>
+          <h2>Which Therapies Can Help With Depression?</h2>
+          <p class="dek">Therapies that can help with depression range from structured, skills-focused approaches to more personal or peer-based formats. A program may draw on one or several together, depending on individual circumstances.</p>
+        </div>
+
+        <div class="pillar-grid cols-3">
+          <div class="pillar-card">
+            <div class="idx">01</div>
+            <h3>Cognitive Behavioral Therapy (CBT)</h3>
+            <p>A structured approach examining how thoughts, feelings, and behaviors influence one another, helping build alternative ways of thinking and coping strategies for difficult situations.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">02</div>
+            <h3>Individual Therapy</h3>
+            <p>One-to-one sessions with a qualified therapist offer a private setting to work through personal experiences and relationship challenges, shaped around each person's goals.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">03</div>
+            <h3>Group Therapy</h3>
+            <p>Structured sessions with a small group build coping skills, share experiences, and practice communication, offering peer support individual therapy alone cannot.</p>
+          </div>
+        </div>
+
+        <div class="info-quad" style="margin-top:52px;">
+          <div class="info-block">
+            <h4>Cognitive Behavioral Therapy — May Focus On</h4>
+            <div class="balanced-strip">
+              <span class="balanced-chip">Unhelpful thought patterns</span>
+              <span class="balanced-chip">Behavioural patterns</span>
+              <span class="balanced-chip">Coping strategies</span>
+              <span class="balanced-chip">Problem-solving</span>
+              <span class="balanced-chip">Practical skills</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <h4>Individual Therapy — May Focus On</h4>
+            <div class="balanced-strip">
+              <span class="balanced-chip">Personal experiences</span>
+              <span class="balanced-chip">Emotional difficulties</span>
+              <span class="balanced-chip">Coping strategies</span>
+              <span class="balanced-chip">Relationships</span>
+              <span class="balanced-chip">Individual goals</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <h4>Group Therapy — May Focus On</h4>
+            <div class="balanced-strip">
+              <span class="balanced-chip">Social connection</span>
+              <span class="balanced-chip">Shared experiences</span>
+              <span class="balanced-chip">Communication skills</span>
+              <span class="balanced-chip">Coping strategies</span>
+              <span class="balanced-chip">Peer support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conditions">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">04 — Co-Occurring Conditions</span>
+          <h2>What Other Mental Health Conditions Can Be Addressed?</h2>
+          <p class="dek">Conditions that can be addressed alongside depression range from anxiety to trauma-related concerns and the effects of prolonged stress, each requiring its own therapeutic focus.</p>
+        </div>
+
+        <div class="pillar-grid cols-3">
+          <div class="pillar-card">
+            <div class="idx">01</div>
+            <h3>Anxiety</h3>
+            <p>Persistent fear, worry, or apprehension can affect sleep, concentration, relationships, and everyday routine. Treatment typically addresses both sets of symptoms together rather than in isolation.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">02</div>
+            <h3>Trauma and PTSD</h3>
+            <p>A traumatic event can leave a lasting psychological impact, for some developing into post-traumatic stress disorder. Treatment accounts for both the depressive symptoms and the effects of the trauma.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">03</div>
+            <h3>Burnout and Stress</h3>
+            <p>Prolonged stress can lead to emotional exhaustion, reduced motivation, and disrupted functioning. Professional assessment helps distinguish burnout from depression and points to the right support.</p>
+          </div>
+        </div>
+
+        <div class="info-quad" style="margin-top:52px;">
+          <div class="info-block">
+            <h4>Anxiety — May Involve</h4>
+            <div class="balanced-strip">
+              <span class="balanced-chip">Persistent worry</span>
+              <span class="balanced-chip">Difficulty concentrating</span>
+              <span class="balanced-chip">Physical symptoms</span>
+              <span class="balanced-chip">Restlessness</span>
+              <span class="balanced-chip">Sleep difficulties</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <h4>Trauma and PTSD — May Involve</h4>
+            <div class="balanced-strip">
+              <span class="balanced-chip">Intrusive memories</span>
+              <span class="balanced-chip">Hypervigilance</span>
+              <span class="balanced-chip">Emotional distress</span>
+              <span class="balanced-chip">Avoidance</span>
+              <span class="balanced-chip">Sleep difficulties</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <h4>Burnout and Stress — May Involve</h4>
+            <div class="balanced-strip">
+              <span class="balanced-chip">Emotional exhaustion</span>
+              <span class="balanced-chip">Reduced motivation</span>
+              <span class="balanced-chip">Changes in sleep</span>
+              <span class="balanced-chip">Feeling overwhelmed</span>
+              <span class="balanced-chip">Difficulty concentrating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="daily-life">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">05 — A Typical Day</span>
+          <h2>What is Daily Life Like at a Mental Health Retreat?</h2>
+          <p class="dek">Daily life generally follows a structured rhythm built around treatment, wellbeing, rest, and recovery — bringing together therapy, professional check-ins, meals, wellness activities, personal time, and rest.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="t-step">
+            <span class="dot"></span>
+            <div class="t-label">01 · MORNING</div>
+            <h4>Settling In</h4>
+            <p>Breakfast and time to settle in before any scheduled treatment or activities get underway.</p>
+          </div>
+          <div class="t-step">
+            <span class="dot"></span>
+            <div class="t-label">02 · TREATMENT</div>
+            <h4>Clinical Sessions</h4>
+            <p>Therapy, counseling, clinical sessions, or other planned treatments take place during this block.</p>
+          </div>
+          <div class="t-step">
+            <span class="dot"></span>
+            <div class="t-label">03 · MIDDAY</div>
+            <h4>Rest &amp; Meals</h4>
+            <p>Meals, rest, and personal time fill the middle part of the day.</p>
+          </div>
+          <div class="t-step">
+            <span class="dot"></span>
+            <div class="t-label">04 · AFTERNOON</div>
+            <h4>Therapeutic Activity</h4>
+            <p>Further therapy, wellness sessions, or recovery-focused work continue the day's program.</p>
+          </div>
+          <div class="t-step">
+            <span class="dot"></span>
+            <div class="t-label">05 · EVENING</div>
+            <h4>Winding Down</h4>
+            <p>Dinner, relaxation, personal time, and winding down for rest close out the day.</p>
+          </div>
+        </div>
+        <p class="timeline-note">This schedule is illustrative only. Daily routines differ considerably between residential programs and are adapted to individual treatment needs.</p>
+
+        <div class="info-quad">
+          <div class="info-block">
+            <h4>Daily Treatment Schedule</h4>
+            <p>A structured routine gives residential programs consistency — carving out time for treatment, therapeutic activities, meals, rest, and personal time, while staying personalized to each individual's care.</p>
+          </div>
+          <div class="info-block">
+            <h4>Private &amp; Supportive Environment</h4>
+            <p>A residential retreat gives a person a dedicated space to focus on treatment, stepping away from usual responsibilities while professional care, privacy, and consistency remain present throughout the stay.</p>
+          </div>
+          <div class="info-block">
+            <h4>Wellness &amp; Recovery Activities</h4>
+            <p>Mindfulness or relaxation practices, gentle physical activity, time outdoors, and structured recreation work alongside clinical treatment, reinforcing healthy routines rather than replacing therapy.</p>
+          </div>
+          <div class="info-block">
+            <h4>A Balanced Approach to Recovery</h4>
+            <p>Recovery works best when clinical care, therapeutic support, healthy routine, and personal time reinforce one another rather than standing apart.</p>
+            <div class="balanced-strip">
+              <span class="balanced-chip">Clinical care</span>
+              <span class="balanced-chip">Therapeutic support</span>
+              <span class="balanced-chip">Healthy routine</span>
+              <span class="balanced-chip">Rest &amp; personal time</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <h4>More Than a Treatment Schedule</h4>
+          <p>Residential mental health care brings structured treatment together with time for rest, reflection, daily routine, and supportive activities — treatment becomes one part of a broader recovery plan, not the entire focus of the stay.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-thailand">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">06 — Setting &amp; Location</span>
+          <h2>Why Choose Thailand for Depression Treatment?</h2>
+          <p class="dek">Thailand can offer a distinctive combination of private mental health care, established experience supporting international patients, and a calm environment — factors worth weighing alongside clinical suitability and individual treatment needs.</p>
+        </div>
+
+        <div class="pillar-grid cols-3">
+          <div class="pillar-card">
+            <div class="idx">01</div>
+            <h3>Private Mental Health Care</h3>
+            <p>Private facilities may offer structured residential programs, access to qualified professionals, and a dedicated environment for treatment. Standards vary between providers, so it's worth reviewing what any specific facility offers.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">02</div>
+            <h3>International Treatment Experience</h3>
+            <p>Providers who work with patients from different countries may offer services designed with international patients in mind — coordination, communication, and treatment logistics worth confirming directly.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="idx">03</div>
+            <h3>Calm Recovery Environment</h3>
+            <p>A quieter, more structured setting may give patients space away from everyday responsibilities and distractions — dedicated surroundings, structured routines, and time for rest.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:56px;max-width:760px;">
+          <h3 style="font-size:1.25rem;margin-bottom:4px;">What Should You Consider Before Choosing a Retreat in Thailand?</h3>
+          <ul class="consider-list">
+            <li><strong>Clinical Expertise</strong><span>Check the qualifications and experience of the professionals providing treatment.</span></li>
+            <li><strong>Treatment Approach</strong><span>Understand which therapies and treatment approaches are available.</span></li>
+            <li><strong>Level of Care</strong><span>Consider what level of residential care is appropriate for your needs.</span></li>
+            <li><strong>Accreditation &amp; Credentials</strong><span>Check the provider's relevant licenses, registrations, and professional credentials.</span></li>
+            <li><strong>International Patient Support</strong><span>Ask about accommodations for travel, logistics, and continuity of care.</span></li>
+            <li><strong>Aftercare</strong><span>Ask how treatment and support will continue after returning from the program.</span></li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <h4>The Right Setting Depends on Individual Needs</h4>
+          <p>Thailand may be an appealing option for some patients, but the most appropriate treatment program ultimately depends on individual clinical needs, professional assessment, treatment quality, and personal circumstances.</p>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Explore Depression Treatment in Thailand</h3>
+            <p>Discover details on residential care, therapeutic methods, and available resources for those exploring options in Thailand.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#is-it-right">Explore Depression Treatment</a>
+            <a class="btn btn-secondary" href="#faq">Speak With Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="is-it-right">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">07 — Deciding on Care</span>
+          <h2>How Do You Know if a Depression Retreat Is Right for You?</h2>
+        </div>
+        <div style="max-width:720px;">
+          <p style="font-size:1.03rem;color:var(--ink-soft);">
+            You know if a depression retreat is right for you by evaluating symptom severity alongside guidance from a licensed mental health professional. Persistent depressive symptoms that interfere with daily functioning may indicate a need for structured residential support, and previous attempts at outpatient treatment that did not produce sufficient improvement can also signal readiness for a higher level of care.
+          </p>
+          <ul class="checklist" style="margin-top:32px;">
+            <li>Personal circumstances — access to support systems and ability to step away from daily responsibilities.</li>
+            <li>Clinical recommendations from a therapist or physician on appropriate treatment options.</li>
+            <li>Readiness to commit to a structured program and openness to therapeutic engagement.</li>
+          </ul>
+          <p style="margin-top:24px;font-size:0.94rem;color:var(--ink-faint);">Careful evaluation of factors of this kind can help determine whether a retreat aligns with individual needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="after-treatment">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">08 — Aftercare &amp; Recovery</span>
+          <h2>What Happens After Depression Treatment?</h2>
+          <p class="dek">A structured transition process follows residential care. Continued therapy, relapse prevention, healthy routines, and support networks work together to sustain progress, with aftercare planning guiding each stage.</p>
+        </div>
+
+        <div class="process-grid" style="grid-template-columns:repeat(2,1fr);">
+          <article class="process-card">
+            <div class="p-head">
+              <div class="p-num">01 · PREPARING FOR CONTINUED CARE</div>
+              <h3>Aftercare Planning</h3>
+              <p class="p-def">A structured plan helps someone shift from residential treatment back to daily life, shaped around individual needs and adjusted as circumstances change.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Scheduled follow-up visits</li>
+                  <li>Continued therapy sessions</li>
+                  <li>Medication oversight, where applicable</li>
+                  <li>Defined recovery goals</li>
+                  <li>Identification of available support resources</li>
+                  <li>Preparation for potential setbacks</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <article class="process-card">
+            <div class="p-head">
+              <div class="p-num">02 · CONTINUED THERAPEUTIC SUPPORT</div>
+              <h3>Ongoing Therapy</h3>
+              <p class="p-def">Continued therapy sessions help sustain progress achieved during residential treatment, scheduled at regular intervals depending on individual progress.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Regular outpatient sessions</li>
+                  <li>Periodic check-ins with a therapist</li>
+                  <li>Adjustment of coping strategies over time</li>
+                  <li>Review of treatment goals</li>
+                  <li>Coordination with previous care providers</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <article class="process-card">
+            <div class="p-head">
+              <div class="p-num">03 · RECOGNIZING CHANGES EARLY</div>
+              <h3>Relapse Prevention</h3>
+              <p class="p-def">Strategies help individuals identify early warning signs before symptoms intensify, reinforcing awareness built during residential treatment.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Identification of early warning signs</li>
+                  <li>Development of coping strategies</li>
+                  <li>Awareness of personal triggers</li>
+                  <li>Emergency contact planning</li>
+                  <li>Periodic review of prevention strategies</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <article class="process-card">
+            <div class="p-head">
+              <div class="p-num">04 · BUILDING SUSTAINABLE HABITS</div>
+              <h3>Healthy Lifestyle and Routine</h3>
+              <p class="p-def">Sustainable daily habits support emotional stability following residential treatment, centered around sleep, nutrition, and physical activity.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Consistent sleep schedules</li>
+                  <li>Balanced nutrition habits</li>
+                  <li>Regular physical activity</li>
+                  <li>Stress management practices</li>
+                  <li>Gradual reintegration of daily responsibilities</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <article class="process-card" style="grid-column:1 / -1;">
+            <div class="p-head">
+              <div class="p-num">05 · STAYING CONNECTED</div>
+              <h3>Support Networks</h3>
+              <p class="p-def">Ongoing connection with supportive individuals reinforces progress made during treatment through family involvement, peer groups, and community resources.</p>
+            </div>
+            <details>
+              <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="p-body">
+                <ul>
+                  <li>Family or partner involvement</li>
+                  <li>Peer support groups</li>
+                  <li>Community resources</li>
+                  <li>Continued communication with care providers</li>
+                  <li>Encouragement to maintain social connections</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+        </div>
+
+        <div style="margin-top:56px;">
+          <h3 style="font-size:1.25rem;margin-bottom:16px;">Returning to Everyday Life</h3>
+          <div class="return-strip">
+            <div class="return-step">
+              <div class="r-num">01</div>
+              <h4>Transition</h4>
+              <p>Getting ready to step down from residential care and resume regular obligations.</p>
+            </div>
+            <div class="return-step">
+              <div class="r-num">02</div>
+              <h4>Adjustment</h4>
+              <p>Putting therapeutic tools into practice while navigating the demands of everyday circumstances.</p>
+            </div>
+            <div class="return-step">
+              <div class="r-num">03</div>
+              <h4>Continued Support</h4>
+              <p>Sustaining suitable professional and personal resources once treatment concludes.</p>
+            </div>
+          </div>
+          <p class="timeline-note">The path back to daily life differs for each individual and may call for continued adjustment and support along the way.</p>
+        </div>
+
+        <div class="callout" style="background:var(--crisis-bg);border-color:var(--crisis-line);">
+          <h4 style="color:var(--crisis-ink);">When Should You Seek Additional Support?</h4>
+          <p style="color:var(--crisis-ink);">Contacting a licensed mental health professional may be worthwhile if you notice: depression symptoms returning or intensifying, growing distance from family and friends, an ongoing sense of hopelessness, shifts in sleep or appetite, trouble keeping up with daily obligations, or struggling to follow through with a recovery plan.</p>
+          <p style="color:var(--crisis-ink);">Immediate danger or a mental health crisis calls for urgent contact with local emergency services or the closest emergency facility.</p>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Continue Your Mental Health Journey</h3>
+            <p>Discover options for treatment, aftercare, and continued mental health support available in Thailand.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#faq">Explore Mental Health Support</a>
+            <a class="btn btn-secondary" href="#faq">Speak With Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="eyebrow">09 — Frequently Asked</span>
+          <h2>Common Questions About Depression &amp; Mental Health Retreats</h2>
+          <p class="dek">Answers grouped by the way people most often search for this kind of care.</p>
+        </div>
+
+        <div class="faq-tabs" role="tablist" id="faq-tabs">
+          <button class="faq-tab" role="tab" aria-selected="true" data-panel="panel-1">Depression Retreats</button>
+          <button class="faq-tab" role="tab" aria-selected="false" data-panel="panel-2">Depression Retreat Thailand</button>
+          <button class="faq-tab" role="tab" aria-selected="false" data-panel="panel-3">Mental Health Retreat Thailand</button>
+          <button class="faq-tab" role="tab" aria-selected="false" data-panel="panel-4">Depression Treatment &amp; Rehab Thailand</button>
+        </div>
+
+        <div class="faq-panel active" id="panel-1">
+          <details class="faq-item" open>
+            <summary><h2>What is a depression retreat?</h2><span class="plus"></span></summary>
+            <p class="faq-a">A depression retreat is a residential program designed to provide structured mental health support in a dedicated setting away from daily environments. Programs typically combine clinical assessment, individual and group therapy, and wellness-based activities. Licensed professionals oversee treatment throughout the stay, adjusting care based on patient progress. Duration of stay can vary depending on program structure and personal needs. Removal from familiar stressors may create space for focused emotional processing and recovery. Structured routines within a retreat setting can support consistency throughout treatment. Combined elements of clinical oversight and residential structure distinguish a depression retreat from standard outpatient care.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>How can a depression retreat help with recovery?</h3><span class="plus"></span></summary>
+            <p class="faq-a">A depression retreat helps with recovery by combining clinical treatment with a supportive residential environment. Structured therapy sessions allow patients to address underlying causes of depressive symptoms under professional guidance. Consistent daily routines can reinforce stability and reduce disruptions common in everyday life. Peer interaction within group settings may reduce feelings of isolation often associated with depression. Distance from familiar stressors allows greater focus on emotional processing and healing. Ongoing monitoring by clinical staff ensures treatment remains responsive to patient progress.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>What should I expect at a depression retreat?</h3><span class="plus"></span></summary>
+            <p class="faq-a">You should expect a structured daily schedule combining therapy, wellness activities, and rest. Initial intake typically involves a comprehensive assessment conducted by licensed professionals. Individual and group therapy sessions are commonly scheduled throughout the program based on treatment goals. Meals and daily routines are often designed to support both physical and emotional well-being, and staff remain available to address concerns throughout the stay.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h4>Who can benefit from a retreat for depression?</h4><span class="plus"></span></summary>
+            <p class="faq-a">Patients experiencing persistent depressive symptoms that interfere with daily functioning can benefit, as can working professionals facing prolonged stress or burnout. Patients who have not achieved sufficient progress through outpatient treatment alone might consider residential support, particularly those with strong personal support systems willing to step away from daily responsibilities. Clinical evaluation remains necessary to confirm appropriateness for residential treatment.</p>
+          </details>
+        </div>
+
+        <div class="faq-panel" id="panel-2">
+          <details class="faq-item" open>
+            <summary><h2>What is a depression retreat in Thailand?</h2><span class="plus"></span></summary>
+            <p class="faq-a">A depression retreat in Thailand is a residential program offering structured mental health treatment within a calm, dedicated setting. Programs typically combine clinical assessment, therapy sessions, and wellness-focused activities tailored to patient needs. Licensed professionals oversee care throughout the stay, adjusting treatment based on observed progress. Thailand's natural surroundings and accessible facilities may contribute to a supportive recovery environment.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>How long do depression retreats in Thailand last?</h3><span class="plus"></span></summary>
+            <p class="faq-a">Depression retreats in Thailand last for about two to twelve weeks, depending on patient needs and program structure. Shorter programs may focus on stabilization and initial therapeutic engagement, while longer stays often allow deeper exploration of underlying causes and more comprehensive treatment planning. Clinical assessment during intake typically informs recommended program length.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h4>What does a depression retreat program in Thailand include?</h4><span class="plus"></span></summary>
+            <div class="faq-a">
+              <p>A depression retreat program in Thailand includes clinical assessment, individualized therapy, and structured daily routines, tailored based on patient symptoms and treatment goals.</p>
+              <ul class="checklist" style="margin-top:14px;">
+                <li><strong>Clinical Assessment</strong> — a licensed professional evaluates symptoms and history to guide treatment direction.</li>
+                <li><strong>Individual and Group Therapy</strong> — sessions address emotional patterns through personal and peer-based settings.</li>
+                <li><strong>Wellness Activities</strong> — structured routines incorporating rest, nutrition, and light physical activity.</li>
+                <li><strong>Progress Monitoring</strong> — clinical staff track improvement and adjust treatment as needed.</li>
+                <li><strong>Aftercare Planning</strong> — preparation for continued support before departure.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-panel" id="panel-3">
+          <details class="faq-item" open>
+            <summary><h2>What is a mental health retreat in Thailand?</h2><span class="plus"></span></summary>
+            <p class="faq-a">A mental health retreat in Thailand is a residential program providing structured psychological support within a dedicated, calm environment. Programs typically address a range of conditions, including depression, anxiety, and stress-related concerns. Licensed professionals oversee treatment, combining clinical care with wellness-focused daily routines.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>What treatments are offered at a mental health retreat in Thailand?</h3><span class="plus"></span></summary>
+            <div class="faq-a">
+              <p>Clinical assessment during intake typically guides selection of appropriate therapeutic methods, adjusted throughout the stay based on progress.</p>
+              <ul class="checklist" style="margin-top:14px;">
+                <li><strong>Individual Therapy</strong> — one-on-one sessions address personal history and specific symptoms.</li>
+                <li><strong>Group Therapy</strong> — peer-based sessions provide mutual support and reduce isolation.</li>
+                <li><strong>Cognitive Behavioral Therapy</strong> — structured techniques help adjust negative thought patterns.</li>
+                <li><strong>Wellness Activities</strong> — daily routines incorporating rest, nutrition, and light physical activity.</li>
+                <li><strong>Aftercare Planning</strong> — preparation for continued support after the stay.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Who can attend a Thailand mental health retreat?</h3><span class="plus"></span></summary>
+            <p class="faq-a">Patients experiencing depression, anxiety, burnout, or related mental health concerns can attend, as can working professionals seeking structured recovery away from daily stressors. Patients who have not achieved sufficient progress through outpatient care alone might consider residential treatment. Clinical evaluation remains necessary to confirm eligibility.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h4>How does a mental health retreat support recovery?</h4><span class="plus"></span></summary>
+            <p class="faq-a">A mental health retreat supports recovery by combining clinical treatment with a structured, distraction-free environment. Licensed professionals conduct ongoing assessments to guide therapy selection and monitor progress. Individual and group sessions address emotional patterns while building coping strategies, and aftercare planning helps extend progress beyond the residential stay into daily life.</p>
+          </details>
+        </div>
+
+        <div class="faq-panel" id="panel-4">
+          <details class="faq-item" open>
+            <summary><h2>What depression treatment is available in Thailand?</h2><span class="plus"></span></summary>
+            <div class="faq-a">
+              <p>Residential care combining clinical therapy with structured wellness routines, with individual and group sessions tailored to symptom severity and personal circumstances.</p>
+              <ul class="checklist" style="margin-top:14px;">
+                <li><strong>Residential Treatment Programs</strong> — structured stays combining clinical assessment, therapy, and daily routines.</li>
+                <li><strong>Individual and Group Therapy</strong> — sessions addressing emotional patterns through personal and peer-based formats.</li>
+                <li><strong>Cognitive Behavioral Therapy</strong> — structured techniques targeting negative thought patterns linked to depression.</li>
+                <li><strong>Aftercare Support</strong> — continued resources following treatment to maintain progress and reduce relapse risk.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>What is depression rehab in Thailand?</h3><span class="plus"></span></summary>
+            <p class="faq-a">Depression rehab in Thailand is a structured residential program combining clinical treatment with supportive daily routines. Programs typically address underlying causes of depression through therapy, professional supervision, and wellness-focused activities. Duration and structure can vary depending on symptom severity and personal circumstances.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>What happens during depression rehab in Thailand?</h3><span class="plus"></span></summary>
+            <p class="faq-a">Programs typically begin with clinical evaluation to guide treatment direction and identify patient needs, followed by individual and group therapy sessions, daily wellness routines incorporating rest and light activity, and ongoing progress monitoring that allows the care team to respond promptly to changing needs.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h4>How is depression rehab different from a depression retreat?</h4><span class="plus"></span></summary>
+            <p class="faq-a">Depression rehab is different from a depression retreat through its emphasis on structured clinical treatment rather than general wellness support. Rehab programs typically involve more intensive medical and therapeutic oversight tailored to specific symptom severity, while retreat programs often incorporate a broader mix of wellness activities alongside therapeutic components. Terminology may also differ depending on the facility and its specific treatment focus.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container-wide">
+        <span>Depression and Mental Health Retreat in Thailand — informational content draft.</span>
+        <span>This page is for general information only and is not a substitute for professional medical advice, diagnosis, or treatment.</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  // mobile toc mirrors desktop rail
+  (function(){
+    var rail = document.getElementById('toc');
+    var mobile = document.getElementById('mobile-toc-links');
+    rail.querySelectorAll('a').forEach(function(a){
+      var clone = a.cloneNode(true);
+      mobile.appendChild(clone);
+    });
+  })();
+
+  // scroll-spy active state
+  (function(){
+    var sections = Array.from(document.querySelectorAll('section[id]'));
+    var links = Array.from(document.querySelectorAll('.rail a, .mobile-toc a'));
+    if (!('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          links.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function(s){ obs.observe(s); });
+  })();
+
+  // faq tabs
+  (function(){
+    var tabs = document.querySelectorAll('.faq-tab');
+    var panels = document.querySelectorAll('.faq-panel');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        tabs.forEach(function(t){ t.setAttribute('aria-selected','false'); });
+        tab.setAttribute('aria-selected','true');
+        panels.forEach(function(p){ p.classList.remove('active'); });
+        document.getElementById(tab.dataset.panel).classList.add('active');
+      });
+    });
+  })();
+</script>

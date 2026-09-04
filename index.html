@@ -1,68 +1,68 @@
 <title>Depression Retreat Thailand</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* ================= TOKENS ================= */
+  /* ================= TOKENS (The Cabin brand) ================= */
   :root{
-    --paper:#EAEBDF;
-    --paper-panel:#F6F6EE;
-    --paper-deep:#DEE0CC;
-    --line:#D1D2BC;
-    --ink:#1E2820;
-    --ink-soft:#4C5A4C;
-    --ink-faint:#7C8873;
-    --moss:#4E6B4C;
-    --moss-deep:#334730;
-    --moss-pale:#DCE6D2;
-    --gold:#A07E3B;
-    --gold-pale:#EFE3C3;
+    --paper:#FFFFFF;
+    --paper-panel:#F5F1ED;
+    --paper-deep:#EDE6DA;
+    --line:#E3DCD0;
+    --ink:#1E2E38;
+    --ink-soft:#4E6472;
+    --ink-faint:#8695A0;
+    --moss:#00A499;
+    --moss-deep:#00786F;
+    --moss-pale:#D9F0EE;
+    --gold:#224258;
+    --gold-pale:#DCE6EC;
     --crisis-ink:#6E3B29;
     --crisis-bg:#EFDFD2;
     --crisis-line:#DCC2AC;
-    --shadow: 0 18px 40px -26px rgba(30,40,32,0.35);
-    --focus:#334730;
+    --shadow: 0 18px 40px -26px rgba(20,41,52,0.30);
+    --focus:#00786F;
   }
 
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --paper:#141A15;
-      --paper-panel:#1B221C;
-      --paper-deep:#232B22;
-      --line:#313B30;
-      --ink:#E9EBE1;
-      --ink-soft:#B7C1B0;
-      --ink-faint:#82907E;
-      --moss:#8FAE86;
-      --moss-deep:#B9D2AF;
-      --moss-pale:#26311F;
-      --gold:#D2AD73;
-      --gold-pale:#332A18;
+      --paper:#12202A;
+      --paper-panel:#1B2E3A;
+      --paper-deep:#24404F;
+      --line:#2E4855;
+      --ink:#EDEFF0;
+      --ink-soft:#B9C6CC;
+      --ink-faint:#82949C;
+      --moss:#4DD9CC;
+      --moss-deep:#3BBFB3;
+      --moss-pale:#1E3A3D;
+      --gold:#8FB3C9;
+      --gold-pale:#22343F;
       --crisis-ink:#E6C8B4;
       --crisis-bg:#2E2119;
       --crisis-line:#4A362A;
       --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
-      --focus:#B9D2AF;
+      --focus:#4DD9CC;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#141A15;
-    --paper-panel:#1B221C;
-    --paper-deep:#232B22;
-    --line:#313B30;
-    --ink:#E9EBE1;
-    --ink-soft:#B7C1B0;
-    --ink-faint:#82907E;
-    --moss:#8FAE86;
-    --moss-deep:#B9D2AF;
-    --moss-pale:#26311F;
-    --gold:#D2AD73;
-    --gold-pale:#332A18;
+    --paper:#12202A;
+    --paper-panel:#1B2E3A;
+    --paper-deep:#24404F;
+    --line:#2E4855;
+    --ink:#EDEFF0;
+    --ink-soft:#B9C6CC;
+    --ink-faint:#82949C;
+    --moss:#4DD9CC;
+    --moss-deep:#3BBFB3;
+    --moss-pale:#1E3A3D;
+    --gold:#8FB3C9;
+    --gold-pale:#22343F;
     --crisis-ink:#E6C8B4;
     --crisis-bg:#2E2119;
     --crisis-line:#4A362A;
     --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
-    --focus:#B9D2AF;
+    --focus:#4DD9CC;
   }
 
   *{box-sizing:border-box;}
@@ -71,12 +71,12 @@
     margin:0;
     background:var(--paper);
     color:var(--ink);
-    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    font-family:'Poppins', -apple-system, sans-serif;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,h4{
-    font-family:'Source Serif 4', Georgia, serif;
+    font-family:'Sanchez', Georgia, serif;
     font-weight:600;
     color:var(--ink);
     margin:0;
@@ -89,7 +89,7 @@
   :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px;}
 
   .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Poppins', sans-serif;
     font-size:0.72rem;
     font-weight:500;
     letter-spacing:0.11em;
@@ -112,14 +112,13 @@
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     padding:13px 24px;border-radius:3px;
-    font-family:'IBM Plex Sans',sans-serif;font-size:0.95rem;font-weight:600;
+    font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:600;
     text-decoration:none;white-space:nowrap;
     transition:background-color .18s ease, color .18s ease, border-color .18s ease;
   }
   .btn-primary{background:var(--moss-deep);color:#F6F6EE;border:1px solid var(--moss-deep);}
   .btn-primary:hover{background:var(--moss);border-color:var(--moss);}
-  :root[data-theme="dark"] .btn-primary{color:#141A15;}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .btn-primary{color:#141A15;} }
+  .btn-primary{color:#F5F1ED;}
   .btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--line);}
   .btn-secondary:hover{border-color:var(--moss);color:var(--moss-deep);}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
@@ -136,9 +135,20 @@
   /* ---------- TOP NAV ---------- */
   .topnav{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);}
   .topnav-main{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0 12px;}
-  .topnav-brand{font-family:'Source Serif 4',serif;font-weight:600;font-size:1.02rem;color:var(--ink);text-decoration:none;white-space:nowrap;}
-  .topnav-links{display:flex;gap:8px;overflow-x:auto;padding:0 0 14px;scrollbar-width:none;}
+  .topnav-brand{display:flex;align-items:center;gap:12px;font-family:'Sanchez',serif;font-weight:600;font-size:1.02rem;color:var(--ink);text-decoration:none;white-space:nowrap;}
+  .brand-mark{width:38px;height:38px;border-radius:9px;background:#224258;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+  .brand-mark img{width:27px;height:27px;object-fit:contain;display:block;}
+  .topnav-scroll-row{display:flex;align-items:center;gap:8px;padding-bottom:14px;}
+  .topnav-links{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;}
   .topnav-links::-webkit-scrollbar{display:none;}
+  .topnav-arrow{
+    flex-shrink:0;width:30px;height:30px;border-radius:999px;
+    border:1px solid var(--line);background:var(--paper-panel);color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;
+  }
+  .topnav-arrow svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .topnav-arrow:hover{color:var(--ink);border-color:var(--moss);}
+  .topnav-arrow[disabled]{opacity:0.3;cursor:default;pointer-events:none;}
   .topnav-links a{
     flex-shrink:0;font-size:0.82rem;font-weight:600;color:var(--ink-soft);
     padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;
@@ -146,8 +156,7 @@
   }
   .topnav-links a:hover{color:var(--ink);border-color:var(--moss);}
   .topnav-links a.active{background:var(--moss-deep);color:#F6F6EE;border-color:var(--moss-deep);}
-  :root[data-theme="dark"] .topnav-links a.active{color:#141A15;}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .topnav-links a.active{color:#141A15;}}
+  .topnav-links a.active{color:#F5F1ED;}
   .topnav-main .btn{flex-shrink:0;padding:10px 18px;font-size:0.86rem;}
 
   /* ---------- HERO ---------- */
@@ -157,40 +166,22 @@
   .hero .eyebrow{margin-bottom:16px;display:block;}
   .hero-lede{margin-top:22px;font-size:1.08rem;color:var(--ink-soft);max-width:52ch;}
 
-  .contour{position:relative;aspect-ratio:4/5;border-radius:58% 42% 38% 62% / 55% 40% 60% 45%;overflow:hidden;background:var(--h-sand);box-shadow:var(--shadow);}
+  .contour{position:relative;aspect-ratio:4/5;border-radius:58% 42% 38% 62% / 55% 40% 60% 45%;overflow:hidden;background:var(--paper-panel);box-shadow:var(--shadow);}
   .contour svg{width:100%;height:100%;display:block;}
 
-  /* ---------- HERO BLOCK (matches source artifact) ---------- */
-  .hero-block{
-    --h-ink:#223027; --h-ink-soft:#4A594E; --h-bg-panel:#FBFAF6;
-    --h-sage:#5F7A64; --h-sage-deep:#3F5647; --h-teal:#3E5C58;
-    --h-sand:#E4DCC8; --h-line:#DBD5C4;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .hero-block{
-      --h-ink:#E9EBE1; --h-ink-soft:#B7C1B0; --h-bg-panel:#1B221C;
-      --h-sage:#8FAE86; --h-sage-deep:#B9D2AF; --h-teal:#9BC2BC;
-      --h-sand:#26311F; --h-line:#313B30;
-    }
-  }
-  :root[data-theme="dark"] .hero-block{
-    --h-ink:#E9EBE1; --h-ink-soft:#B7C1B0; --h-bg-panel:#1B221C;
-    --h-sage:#8FAE86; --h-sage-deep:#B9D2AF; --h-teal:#9BC2BC;
-    --h-sand:#26311F; --h-line:#313B30;
-  }
-  .hero-block .intro,.hero-block .overview{font-family:'Karla',sans-serif;}
-  .hero-block .intro h2{font-family:'Fraunces',serif;font-weight:500;color:var(--h-ink);font-size:clamp(1.5rem,2.2vw,1.9rem);line-height:1.25;}
+  /* ---------- INTRO / OVERVIEW (hero component) ---------- */
   .intro{padding:8px 0 0;border-bottom:none;}
   .intro-header{max-width:640px;}
+  .intro-header h2{font-size:clamp(1.5rem,2.2vw,1.9rem);line-height:1.25;}
   .intro-body{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:36px;}
-  .intro-body p{margin:0;color:var(--h-ink-soft);font-size:0.98rem;}
-  .intro-body p strong{display:block;color:var(--h-ink);font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;margin-bottom:8px;}
+  .intro-body p{margin:0;color:var(--ink-soft);font-size:0.98rem;}
+  .intro-body p strong{display:block;color:var(--ink);font-weight:600;font-size:1.02rem;margin-bottom:8px;}
   .overview{padding:44px 0 88px;border-bottom:1px solid var(--line);}
-  .overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--h-line);border:1px solid var(--h-line);border-radius:4px;overflow:hidden;}
-  .overview-card{background:var(--h-bg-panel);padding:26px 22px;border-left:3px solid var(--h-sage);}
-  .overview-card:nth-child(2),.overview-card:nth-child(4){border-left-color:var(--h-teal);}
-  .overview-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;margin:0 0 8px;color:var(--h-ink);}
-  .overview-card p{margin:0;font-size:0.9rem;color:var(--h-ink-soft);}
+  .overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .overview-card{background:var(--paper-panel);padding:26px 22px;border-left:3px solid var(--moss);}
+  .overview-card:nth-child(2),.overview-card:nth-child(4){border-left-color:var(--gold);}
+  .overview-card h3{font-size:1.02rem;margin:0 0 8px;color:var(--ink);}
+  .overview-card p{margin:0;font-size:0.9rem;color:var(--ink-soft);}
 
   .safety-notice{background:var(--crisis-bg);border-bottom:1px solid var(--crisis-line);}
   .safety-notice .container-wide{padding-top:16px;padding-bottom:16px;display:flex;gap:12px;align-items:flex-start;}
@@ -213,7 +204,7 @@
   .pillar-grid.cols-5{grid-template-columns:repeat(5,1fr);}
   .pillar-grid.cols-3{grid-template-columns:repeat(3,1fr);}
   .pillar-card{background:var(--paper-panel);border:1px solid var(--line);border-radius:4px;padding:26px 22px;}
-  .pillar-card .idx{font-family:'Source Serif 4',serif;font-size:1.7rem;color:var(--moss-pale);font-weight:600;line-height:1;margin-bottom:14px;}
+  .pillar-card .idx{font-family:'Sanchez',serif;font-size:1.7rem;color:var(--moss-pale);font-weight:600;line-height:1;margin-bottom:14px;}
   :root[data-theme="dark"] .pillar-card .idx{color:var(--moss-deep);}
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pillar-card .idx{color:var(--moss-deep);}}
   .pillar-card h3{font-size:1.05rem;margin-bottom:9px;}
@@ -223,7 +214,7 @@
   .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .process-card{background:var(--paper-panel);border:1px solid var(--line);border-radius:4px;padding:0;}
   .process-card .p-head{padding:26px 24px 20px;}
-  .process-card .p-num{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--gold);letter-spacing:0.06em;margin-bottom:12px;}
+  .process-card .p-num{font-family:'Poppins',sans-serif;font-size:0.75rem;color:var(--gold);letter-spacing:0.06em;margin-bottom:12px;}
   .process-card h3{font-size:1.12rem;margin-bottom:8px;}
   .process-card .p-def{font-size:0.93rem;color:var(--ink-soft);}
   .process-card details summary{
@@ -256,7 +247,7 @@
   .timeline::before{content:"";position:absolute;top:13px;left:6%;right:6%;height:1px;background:repeating-linear-gradient(to right,var(--line) 0 8px, transparent 8px 15px);}
   .t-step{position:relative;padding-top:36px;padding-right:16px;}
   .t-step .dot{position:absolute;top:6px;left:0;width:14px;height:14px;border-radius:50%;background:var(--moss);border:3px solid var(--paper);box-shadow:0 0 0 1px var(--line);}
-  .t-step .t-label{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--moss-deep);letter-spacing:0.05em;margin-bottom:6px;}
+  .t-step .t-label{font-family:'Poppins',sans-serif;font-size:0.72rem;color:var(--moss-deep);letter-spacing:0.05em;margin-bottom:6px;}
   .t-step h4{font-size:0.98rem;margin-bottom:6px;}
   .t-step p{font-size:0.87rem;color:var(--ink-soft);}
   .timeline-note{margin-top:22px;font-size:0.82rem;color:var(--ink-faint);font-style:italic;}
@@ -271,13 +262,13 @@
   .consider-list{margin-top:20px;}
   .consider-list li{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:140px 1fr;gap:18px;font-size:0.94rem;color:var(--ink-soft);}
   .consider-list li:first-child{padding-top:0;}
-  .consider-list li strong{color:var(--ink);font-family:'Source Serif 4',serif;font-weight:600;font-size:0.98rem;}
+  .consider-list li strong{color:var(--ink);font-family:'Sanchez',serif;font-weight:600;font-size:0.98rem;}
 
   /* ---------- RETURNING STEPS ---------- */
   .return-strip{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin-top:8px;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
   .return-step{flex:1;min-width:180px;padding:22px 22px;background:var(--paper-panel);}
   .return-step + .return-step{border-left:1px solid var(--line);}
-  .return-step .r-num{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--gold);}
+  .return-step .r-num{font-family:'Poppins',sans-serif;font-size:0.72rem;color:var(--gold);}
   .return-step h4{font-size:1rem;margin:8px 0 6px;}
   .return-step p{font-size:0.88rem;color:var(--ink-soft);}
 
@@ -285,18 +276,17 @@
   .faq-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
   .faq-tab{
     padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--paper-panel);
-    font-size:0.88rem;font-weight:600;color:var(--ink-soft);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;
+    font-size:0.88rem;font-weight:600;color:var(--ink-soft);cursor:pointer;font-family:'Poppins',sans-serif;
   }
   .faq-tab[aria-selected="true"]{background:var(--moss-deep);border-color:var(--moss-deep);color:#F6F6EE;}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .faq-tab[aria-selected="true"]{color:#141A15;}}
-  :root[data-theme="dark"] .faq-tab[aria-selected="true"]{color:#141A15;}
+  .faq-tab[aria-selected="true"]{color:#F5F1ED;}
   .faq-panel{display:none;}
   .faq-panel.active{display:block;}
   .faq-item{border-bottom:1px solid var(--line);}
   .faq-item:first-child{border-top:1px solid var(--line);}
   .faq-item summary{list-style:none;cursor:pointer;padding:20px 4px;display:flex;justify-content:space-between;gap:16px;align-items:flex-start;}
   .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary h2,.faq-item summary h3,.faq-item summary h4{font-family:'Source Serif 4',serif;font-weight:600;color:var(--ink);margin:0;}
+  .faq-item summary h2,.faq-item summary h3,.faq-item summary h4{font-family:'Sanchez',serif;font-weight:600;color:var(--ink);margin:0;}
   .faq-item summary h2{font-size:1.12rem;}
   .faq-item summary h3{font-size:1.02rem;font-weight:500;}
   .faq-item summary h4{font-size:0.96rem;font-weight:500;color:var(--ink-soft);}
@@ -339,16 +329,23 @@
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important;}
+    .topnav-links{scroll-behavior:auto!important;}
   }
 </style>
 
 
 <header class="topnav">
   <div class="container-wide topnav-main">
-    <a class="topnav-brand" href="#top">The Cabin — Depression Retreat Thailand</a>
+    <a class="topnav-brand" href="#top">
+      <span class="brand-mark"><img src="logo-mark.png" alt="The Cabin logo"></span>
+      <span>The Cabin — Depression Retreat Thailand</span>
+    </a>
     <a class="btn btn-primary" href="https://www.thecabinchiangmai.com/pricing/">Explore Treatment Options</a>
   </div>
-  <div class="container-wide">
+  <div class="container-wide topnav-scroll-row">
+    <button class="topnav-arrow" id="tocPrev" type="button" aria-label="Scroll navigation left">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
     <nav class="topnav-links" id="toc">
       <a href="#how-it-helps">How It Helps</a>
       <a href="#treatment-includes">What's Included</a>
@@ -360,6 +357,9 @@
       <a href="#after-treatment">After Treatment</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <button class="topnav-arrow" id="tocNext" type="button" aria-label="Scroll navigation right">
+      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
   </div>
 </header>
 
@@ -485,27 +485,27 @@
           <div class="pillar-card">
             <div class="idx">01</div>
             <h3>Structured Care</h3>
-            <p>Daily activities are organized around therapy, rest, and wellness practices. Consistent scheduling can reduce uncertainty and support emotional stability throughout recovery.</p>
+            <p>Structured care organizes daily activities around therapy sessions, rest, and wellness practices. Consistent scheduling can reduce uncertainty and support emotional stability throughout the recovery process at a residential facility.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">02</div>
             <h3>Professional Support</h3>
-            <p>Licensed therapists and medical staff monitor progress on an ongoing basis, adjusting treatment plans based on patient needs and observed symptoms.</p>
+            <p>Professional support comes from licensed therapists and medical staff who monitor progress. Ongoing supervision allows treatment plans to be adjusted based on patient needs and observed symptoms.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">03</div>
             <h3>Therapeutic Intervention</h3>
-            <p>Individual counseling and group sessions target depressive symptoms directly, using evidence-based approaches to process emotions and build coping strategies.</p>
+            <p>Therapeutic intervention includes individual counseling and group sessions targeting depressive symptoms. Evidence-based approaches may help patients process emotions and develop coping strategies during treatment.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">04</div>
             <h3>Healthy Routine</h3>
-            <p>Balanced meals, physical activity, and regular sleep restore basic daily habits that support both physical health and emotional regulation.</p>
+            <p>Healthy routines incorporate balanced meals, physical activity, and regular sleep patterns. Restoring basic daily habits can support both physical health and emotional regulation during recovery.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">05</div>
             <h3>Space Away From Pressures</h3>
-            <p>Distance from familiar stressors and triggers allows greater focus on reflection and healing, away from routine obligations.</p>
+            <p>Space away from everyday pressures removes patients from familiar stressors and triggers. Distance from routine obligations may allow greater focus on reflection and healing.</p>
           </div>
         </div>
 
@@ -550,11 +550,12 @@
             <div class="p-head">
               <div class="p-num">STEP 01</div>
               <h3>Mental Health Assessment</h3>
-              <p class="p-def">A licensed clinician evaluates symptoms, personal history, and current circumstances during intake, establishing the foundation for treatment planning.</p>
+              <p class="p-def">A licensed clinician evaluates symptoms, personal history, and current circumstances during the initial intake process. The evaluation establishes the foundation for treatment planning and helps identify appropriate levels of care. A thorough mental health assessment allows the clinical team to understand patient needs before therapy or residential support begins.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
               <div class="p-body">
+                <p style="margin:0 0 12px;"><strong>What happens?</strong> A licensed clinician meets with the patient to review symptoms, background, current circumstances, and treatment expectations.</p>
                 <ul>
                   <li>Review of present symptoms</li>
                   <li>Prior mental health and treatment background</li>
@@ -570,11 +571,12 @@
             <div class="p-head">
               <div class="p-num">STEP 02</div>
               <h3>Personalized Treatment Plan</h3>
-              <p class="p-def">The clinical team reviews assessment findings and builds a treatment structure around patient circumstances and goals, adjusted as progress continues.</p>
+              <p class="p-def">The clinical team reviews assessment findings and builds a treatment structure based on patient circumstances and goals. Therapy types, scheduling, and daily activities are shaped around specific needs identified during intake. A personalized treatment plan guides the direction of care throughout the residential stay and may be adjusted as progress continues.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
               <div class="p-body">
+                <p style="margin:0 0 12px;"><strong>What happens?</strong> The clinical team reviews assessment findings and builds a treatment structure suited to patient circumstances and goals.</p>
                 <ul>
                   <li>Selection of therapy types</li>
                   <li>Scheduling of sessions and daily activities</li>
@@ -590,11 +592,12 @@
             <div class="p-head">
               <div class="p-num">STEP 03</div>
               <h3>Ongoing Clinical Support</h3>
-              <p class="p-def">Qualified staff maintain regular contact throughout the stay to track symptoms and overall well-being, responding to concerns as they arise.</p>
+              <p class="p-def">Qualified staff maintain regular contact with patients throughout the residential program to track symptoms and overall well-being. Consistent check-ins allow the care team to identify concerns early and respond accordingly. The ongoing clinical support helps ensure treatment remains responsive to changing needs across the full duration of the stay.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
               <div class="p-body">
+                <p style="margin:0 0 12px;"><strong>What happens?</strong> Qualified staff maintain regular contact throughout the residential stay to track symptoms and overall well-being.</p>
                 <ul>
                   <li>Scheduled check-ins with clinical staff</li>
                   <li>Monitoring of symptom changes</li>
@@ -637,17 +640,17 @@
           <div class="pillar-card">
             <div class="idx">01</div>
             <h3>Cognitive Behavioral Therapy (CBT)</h3>
-            <p>A structured approach examining how thoughts, feelings, and behaviors influence one another, helping build alternative ways of thinking and coping strategies for difficult situations.</p>
+            <p>CBT is a structured therapeutic approach that examines how thoughts, feelings, and behaviors influence one another. Sessions help a person recognize unhelpful patterns, build alternative ways of thinking, and practice coping strategies for difficult situations.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">02</div>
             <h3>Individual Therapy</h3>
-            <p>One-to-one sessions with a qualified therapist offer a private setting to work through personal experiences and relationship challenges, shaped around each person's goals.</p>
+            <p>Individual therapy provides one-to-one sessions with a qualified therapist or mental health professional. Sessions offer a private setting to work through personal experiences, emotional difficulties, and relationship challenges, shaped around each person's specific treatment goals.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">03</div>
             <h3>Group Therapy</h3>
-            <p>Structured sessions with a small group build coping skills, share experiences, and practice communication, offering peer support individual therapy alone cannot.</p>
+            <p>Group therapy involves structured sessions with a qualified therapist or mental health professional and a small group of participants. Sessions create space to build coping skills, share experiences, and practice communication, with peer support that individual therapy alone cannot offer.</p>
           </div>
         </div>
 
@@ -698,17 +701,17 @@
           <div class="pillar-card">
             <div class="idx">01</div>
             <h3>Anxiety</h3>
-            <p>Persistent fear, worry, or apprehension can affect sleep, concentration, relationships, and everyday routine. Treatment typically addresses both sets of symptoms together rather than in isolation.</p>
+            <p>Anxiety involves persistent fear, worry, or apprehension that can affect sleep, concentration, relationships, and everyday routine. A treatment program typically addresses both sets of symptoms together rather than treating each in isolation when it occurs alongside depression.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">02</div>
             <h3>Trauma and PTSD</h3>
-            <p>A traumatic event can leave a lasting psychological impact, for some developing into post-traumatic stress disorder. Treatment accounts for both the depressive symptoms and the effects of the trauma.</p>
+            <p>Trauma can leave a lasting psychological impact, and for some patients this develops into post-traumatic stress disorder following a traumatic event. Treatment needs to account for both the depressive symptoms and the effects of the trauma itself when trauma-related symptoms occur alongside depression.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">03</div>
             <h3>Burnout and Stress</h3>
-            <p>Prolonged stress can lead to emotional exhaustion, reduced motivation, and disrupted functioning. Professional assessment helps distinguish burnout from depression and points to the right support.</p>
+            <p>Prolonged or excessive stress can lead to emotional exhaustion, reduced motivation, difficulty concentrating, and disruption to everyday functioning. Burnout and depression aren't the same condition, though symptoms can overlap, so professional assessment helps distinguish between them and identify the right kind of support.</p>
           </div>
         </div>
 
@@ -792,19 +795,19 @@
         <div class="info-quad">
           <div class="info-block">
             <h4>Daily Treatment Schedule</h4>
-            <p>A structured routine gives residential programs consistency — carving out time for treatment, therapeutic activities, meals, rest, and personal time, while staying personalized to each individual's care.</p>
+            <p>A structured daily routine gives residential programs a sense of consistency, carving out time for treatment, therapeutic activities, meals, rest, and personal time throughout the day. Structure here doesn't mean rigidity, since the routine still stays personalized to each individual's care.</p>
           </div>
           <div class="info-block">
             <h4>Private &amp; Supportive Environment</h4>
-            <p>A residential retreat gives a person a dedicated space to focus on treatment, stepping away from usual responsibilities while professional care, privacy, and consistency remain present throughout the stay.</p>
+            <p>Choosing a residential retreat gives a person a dedicated space to focus on treatment, stepping away from some of the usual responsibilities and pressures of daily life. Professional care remains present throughout the stay, supported by privacy, a consistent environment, and genuine distance from everyday demands.</p>
           </div>
           <div class="info-block">
             <h4>Wellness &amp; Recovery Activities</h4>
-            <p>Mindfulness or relaxation practices, gentle physical activity, time outdoors, and structured recreation work alongside clinical treatment, reinforcing healthy routines rather than replacing therapy.</p>
+            <p>Wellness and recovery activities work alongside clinical treatment rather than replacing it, reinforcing healthy routines and supporting overall wellbeing. Activities might include mindfulness or relaxation practices, gentle physical activity, time spent outdoors, creative pursuits, structured recreation, and healthy meals.</p>
           </div>
           <div class="info-block">
             <h4>A Balanced Approach to Recovery</h4>
-            <p>Recovery works best when clinical care, therapeutic support, healthy routine, and personal time reinforce one another rather than standing apart.</p>
+            <p>Recovery tends to work best when treatment sits alongside daily routine, rest, and personal time, rather than standing apart from them — each element feeds into a shared recovery environment, reinforcing the others rather than working in isolation.</p>
             <div class="balanced-strip">
               <span class="balanced-chip">Clinical care</span>
               <span class="balanced-chip">Therapeutic support</span>
@@ -833,17 +836,17 @@
           <div class="pillar-card">
             <div class="idx">01</div>
             <h3>Private Mental Health Care</h3>
-            <p>Private facilities may offer structured residential programs, access to qualified professionals, and a dedicated environment for treatment. Standards vary between providers, so it's worth reviewing what any specific facility offers.</p>
+            <p>Private mental health facilities in Thailand may offer structured residential programs, access to qualified professionals, and a dedicated environment for treatment. Standards and services vary between providers, so it's worth reviewing what any specific facility offers.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">02</div>
             <h3>International Treatment Experience</h3>
-            <p>Providers who work with patients from different countries may offer services designed with international patients in mind — coordination, communication, and treatment logistics worth confirming directly.</p>
+            <p>Mental health treatment providers in Thailand work with patients from different countries and may offer services designed with international patients in mind. Not every provider has the same level of international experience, so international patient coordination and relevant services are worth confirming directly.</p>
           </div>
           <div class="pillar-card">
             <div class="idx">03</div>
             <h3>Calm Recovery Environment</h3>
-            <p>A quieter, more structured setting may give patients space away from everyday responsibilities and distractions — dedicated surroundings, structured routines, and time for rest.</p>
+            <p>The physical environment can be an important practical consideration when choosing residential care. A quieter or more structured setting may give some patients space away from everyday responsibilities and distractions while they focus on treatment.</p>
           </div>
         </div>
 
@@ -910,7 +913,7 @@
             <div class="p-head">
               <div class="p-num">01 · PREPARING FOR CONTINUED CARE</div>
               <h3>Aftercare Planning</h3>
-              <p class="p-def">A structured plan helps someone shift from residential treatment back to daily life, shaped around individual needs and adjusted as circumstances change.</p>
+              <p class="p-def">A structured aftercare plan can help someone prepare for the shift from residential treatment back to daily life. Plans are typically shaped around individual needs and circumstances, and may be adjusted as those circumstances change.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -931,7 +934,7 @@
             <div class="p-head">
               <div class="p-num">02 · CONTINUED THERAPEUTIC SUPPORT</div>
               <h3>Ongoing Therapy</h3>
-              <p class="p-def">Continued therapy sessions help sustain progress achieved during residential treatment, scheduled at regular intervals depending on individual progress.</p>
+              <p class="p-def">Continued therapy sessions can help sustain progress achieved during residential treatment. Sessions are often scheduled at regular intervals and may shift in frequency depending on individual progress and circumstances.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -951,7 +954,7 @@
             <div class="p-head">
               <div class="p-num">03 · RECOGNIZING CHANGES EARLY</div>
               <h3>Relapse Prevention</h3>
-              <p class="p-def">Strategies help individuals identify early warning signs before symptoms intensify, reinforcing awareness built during residential treatment.</p>
+              <p class="p-def">Relapse prevention strategies can help individuals identify early warning signs before symptoms intensify. Awareness of personal triggers and coping techniques is often built during residential treatment and reinforced afterward.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -971,7 +974,7 @@
             <div class="p-head">
               <div class="p-num">04 · BUILDING SUSTAINABLE HABITS</div>
               <h3>Healthy Lifestyle and Routine</h3>
-              <p class="p-def">Sustainable daily habits support emotional stability following residential treatment, centered around sleep, nutrition, and physical activity.</p>
+              <p class="p-def">Sustainable daily habits can support emotional stability following residential treatment. Routines are often centered around sleep, nutrition, and physical activity established during the program.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -991,7 +994,7 @@
             <div class="p-head">
               <div class="p-num">05 · STAYING CONNECTED</div>
               <h3>Support Networks</h3>
-              <p class="p-def">Ongoing connection with supportive individuals reinforces progress made during treatment through family involvement, peer groups, and community resources.</p>
+              <p class="p-def">Ongoing connection with supportive individuals can help reinforce progress made during treatment. Family involvement, peer groups, and community resources often play a role in sustaining recovery over time.</p>
             </div>
             <details>
               <summary>What this may involve <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -1172,6 +1175,31 @@
     </footer>
 
 <script>
+  // topnav horizontal scroll arrows
+  (function(){
+    var track = document.getElementById('toc');
+    var prev = document.getElementById('tocPrev');
+    var next = document.getElementById('tocNext');
+    if (!track || !prev || !next) return;
+
+    function update(){
+      var max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    }
+    prev.addEventListener('click', function(){
+      track.scrollBy({ left: -200, behavior: 'auto' });
+      update();
+    });
+    next.addEventListener('click', function(){
+      track.scrollBy({ left: 200, behavior: 'auto' });
+      update();
+    });
+    track.addEventListener('scroll', update);
+    window.addEventListener('resize', update);
+    update();
+  })();
+
   // scroll-spy active state
   (function(){
     var sections = Array.from(document.querySelectorAll('section[id]'));

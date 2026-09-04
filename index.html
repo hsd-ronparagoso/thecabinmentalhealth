@@ -24,46 +24,7 @@
     --focus:#00786F;
   }
 
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#12202A;
-      --paper-panel:#1B2E3A;
-      --paper-deep:#24404F;
-      --line:#2E4855;
-      --ink:#EDEFF0;
-      --ink-soft:#B9C6CC;
-      --ink-faint:#82949C;
-      --moss:#4DD9CC;
-      --moss-deep:#3BBFB3;
-      --moss-pale:#1E3A3D;
-      --gold:#8FB3C9;
-      --gold-pale:#22343F;
-      --crisis-ink:#E6C8B4;
-      --crisis-bg:#2E2119;
-      --crisis-line:#4A362A;
-      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
-      --focus:#4DD9CC;
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#12202A;
-    --paper-panel:#1B2E3A;
-    --paper-deep:#24404F;
-    --line:#2E4855;
-    --ink:#EDEFF0;
-    --ink-soft:#B9C6CC;
-    --ink-faint:#82949C;
-    --moss:#4DD9CC;
-    --moss-deep:#3BBFB3;
-    --moss-pale:#1E3A3D;
-    --gold:#8FB3C9;
-    --gold-pale:#22343F;
-    --crisis-ink:#E6C8B4;
-    --crisis-bg:#2E2119;
-    --crisis-line:#4A362A;
-    --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
-    --focus:#4DD9CC;
-  }
+  /* Dark mode intentionally disabled — page stays on the light "Cabin" palette always, matching thecabinchiangmai.com */
 
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
@@ -120,6 +81,8 @@
   .btn-primary:hover{background:var(--moss);border-color:var(--moss);}
   .btn-primary{color:#F5F1ED;}
   .btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .hero .btn-secondary{color:#FFFFFF;border-color:rgba(255,255,255,0.55);}
+  .hero .btn-secondary:hover{border-color:#FFFFFF;color:#FFFFFF;background:rgba(255,255,255,0.1);}
   .btn-secondary:hover{border-color:var(--moss);color:var(--moss-deep);}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
 
@@ -132,10 +95,16 @@
   .cta-band p{color:var(--ink-soft);font-size:0.96rem;max-width:46ch;}
   .cta-band .cta-row{margin-top:0;flex-shrink:0;}
 
-  /* ---------- TOP NAV ---------- */
-  .topnav{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);}
+  /* ---------- TOP NAV (transparent over hero, solid on scroll) ---------- */
+  .topnav{
+    position:fixed;top:0;left:0;right:0;z-index:30;
+    background:transparent;border-bottom:1px solid transparent;
+    transition:background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .topnav.solid{background:var(--paper);border-bottom-color:var(--line);box-shadow:var(--shadow);}
   .topnav-main{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0 12px;}
-  .topnav-brand{display:flex;align-items:center;gap:12px;font-family:'Sanchez',serif;font-weight:600;font-size:1.02rem;color:var(--ink);text-decoration:none;white-space:nowrap;}
+  .topnav-brand{display:flex;align-items:center;gap:12px;font-family:'Sanchez',serif;font-weight:600;font-size:1.02rem;color:#FFFFFF;text-decoration:none;white-space:nowrap;transition:color .25s ease;}
+  .topnav.solid .topnav-brand{color:var(--ink);}
   .brand-mark{width:38px;height:38px;border-radius:9px;background:#224258;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
   .brand-mark img{width:27px;height:27px;object-fit:contain;display:block;}
   .topnav-scroll-row{display:flex;align-items:center;gap:8px;padding-bottom:14px;}
@@ -143,34 +112,39 @@
   .topnav-links::-webkit-scrollbar{display:none;}
   .topnav-arrow{
     flex-shrink:0;width:30px;height:30px;border-radius:999px;
-    border:1px solid var(--line);background:var(--paper-panel);color:var(--ink-soft);
+    border:1px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.12);color:#FFFFFF;
     display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;
+    transition:color .25s ease, border-color .25s ease, background-color .25s ease;
   }
+  .topnav.solid .topnav-arrow{border-color:var(--line);background:var(--paper-panel);color:var(--ink-soft);}
   .topnav-arrow svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-  .topnav-arrow:hover{color:var(--ink);border-color:var(--moss);}
+  .topnav-arrow:hover{color:#FFFFFF;border-color:#FFFFFF;}
+  .topnav.solid .topnav-arrow:hover{color:var(--ink);border-color:var(--moss);}
   .topnav-arrow[disabled]{opacity:0.3;cursor:default;pointer-events:none;}
   .topnav-links a{
-    flex-shrink:0;font-size:0.82rem;font-weight:600;color:var(--ink-soft);
-    padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;
+    flex-shrink:0;font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.85);
+    padding:8px 14px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;text-decoration:none;
     transition:color .15s ease, border-color .15s ease, background-color .15s ease;
   }
-  .topnav-links a:hover{color:var(--ink);border-color:var(--moss);}
-  .topnav-links a.active{background:var(--moss-deep);color:#F6F6EE;border-color:var(--moss-deep);}
-  .topnav-links a.active{color:#F5F1ED;}
+  .topnav-links a:hover{color:#FFFFFF;border-color:#FFFFFF;}
+  .topnav.solid .topnav-links a{color:var(--ink-soft);border-color:var(--line);}
+  .topnav.solid .topnav-links a:hover{color:var(--ink);border-color:var(--moss);}
+  .topnav-links a.active{background:var(--moss-deep);color:#F5F1ED;border-color:var(--moss-deep);}
   .topnav-main .btn{flex-shrink:0;padding:10px 18px;font-size:0.86rem;}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:76px 0 60px;border-bottom:none;position:relative;overflow:hidden;}
-  .hero-grid{display:grid;grid-template-columns:1.2fr 0.9fr;gap:56px;align-items:center;}
-  .hero h1{font-size:clamp(2.1rem,3.6vw,2.85rem);line-height:1.16;letter-spacing:-0.015em;}
-  .hero .eyebrow{margin-bottom:16px;display:block;}
-  .hero-lede{margin-top:22px;font-size:1.08rem;color:var(--ink-soft);max-width:52ch;}
-
-  .contour{position:relative;aspect-ratio:4/5;border-radius:58% 42% 38% 62% / 55% 40% 60% 45%;overflow:hidden;background:var(--paper-panel);box-shadow:var(--shadow);}
-  .contour svg{width:100%;height:100%;display:block;}
+  /* ---------- HERO (full-bleed photo) ---------- */
+  .hero{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:none;padding:0;}
+  .hero-bg{position:absolute;inset:0;z-index:0;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(18,32,42,0.62) 0%, rgba(18,32,42,0.72) 55%, rgba(18,32,42,0.85) 100%);}
+  .hero-center{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center;padding:160px 28px 96px;display:flex;flex-direction:column;align-items:center;}
+  .hero h1{font-size:clamp(2.2rem,4vw,3.1rem);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF;text-wrap:balance;}
+  .hero .eyebrow{margin-bottom:18px;display:block;color:#BFE3DE;}
+  .hero-lede{margin-top:22px;font-size:1.1rem;color:rgba(255,255,255,0.88);max-width:56ch;}
+  .cta-row.center{justify-content:center;}
 
   /* ---------- INTRO / OVERVIEW (hero component) ---------- */
-  .intro{padding:8px 0 0;border-bottom:none;}
+  .intro{margin-top:64px;padding:8px 0 0;border-bottom:none;}
   .intro-header{max-width:640px;}
   .intro-header h2{font-size:clamp(1.5rem,2.2vw,1.9rem);line-height:1.25;}
   .intro-body{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:36px;}
@@ -205,8 +179,6 @@
   .pillar-grid.cols-3{grid-template-columns:repeat(3,1fr);}
   .pillar-card{background:var(--paper-panel);border:1px solid var(--line);border-radius:4px;padding:26px 22px;}
   .pillar-card .idx{font-family:'Sanchez',serif;font-size:1.7rem;color:var(--moss-pale);font-weight:600;line-height:1;margin-bottom:14px;}
-  :root[data-theme="dark"] .pillar-card .idx{color:var(--moss-deep);}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pillar-card .idx{color:var(--moss-deep);}}
   .pillar-card h3{font-size:1.05rem;margin-bottom:9px;}
   .pillar-card p{font-size:0.92rem;color:var(--ink-soft);}
 
@@ -272,6 +244,47 @@
   .return-step h4{font-size:1rem;margin:8px 0 6px;}
   .return-step p{font-size:0.88rem;color:var(--ink-soft);}
 
+  /* ---------- TABS + CARD CAROUSEL ---------- */
+  .tabs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:36px auto 0;max-width:920px;}
+  .tab-pill{
+    flex-shrink:0;font-size:0.85rem;font-weight:600;color:var(--ink-soft);
+    padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--paper-panel);
+    cursor:pointer;font-family:'Poppins',sans-serif;
+    transition:color .15s ease,border-color .15s ease,background-color .15s ease;
+  }
+  .tab-pill:hover{color:var(--ink);border-color:var(--moss);}
+  .tab-pill[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#F5F1ED;}
+
+  .carousel-wrap{position:relative;margin-top:44px;display:flex;align-items:center;gap:14px;}
+  .carousel-track{
+    display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;
+    padding:4px 4px 14px;flex:1;min-width:0;
+    -webkit-mask-image:linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
+    mask-image:linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-card{
+    scroll-snap-align:center;flex-shrink:0;width:min(640px, 88vw);
+    background:#FFFFFF;border:1px solid #EDEDED;border-radius:18px;
+    display:flex;align-items:stretch;gap:24px;padding:18px;
+    box-shadow:0 16px 34px -20px rgba(20,32,42,0.35);
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .carousel-card.is-active{border-color:var(--moss);box-shadow:0 20px 40px -18px rgba(20,32,42,0.45);}
+  .carousel-card-media{flex:0 0 42%;min-width:150px;border-radius:12px;overflow:hidden;}
+  .carousel-card-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .carousel-card-body{flex:1;min-width:0;padding:6px 8px;display:flex;flex-direction:column;justify-content:center;}
+  .carousel-card h3{font-size:1.18rem;font-weight:700;margin:0 0 10px;color:#1E2E38;}
+  .carousel-card p{font-size:0.93rem;color:#4E6472;margin:0;line-height:1.6;}
+  .carousel-arrow{
+    flex-shrink:0;width:40px;height:40px;border-radius:999px;
+    border:1px solid var(--line);background:var(--paper-panel);color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;
+  }
+  .carousel-arrow:hover{color:var(--ink);border-color:var(--moss);}
+  .carousel-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .carousel-arrow[disabled]{opacity:0.3;cursor:default;pointer-events:none;}
+
   /* ---------- FAQ ---------- */
   .faq-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
   .faq-tab{
@@ -303,11 +316,11 @@
   @media (max-width:640px){
     .topnav-main{flex-wrap:wrap;}
     .topnav-main .btn{order:3;width:100%;justify-content:center;}
+    .hero-center{padding:230px 20px 64px;}
   }
 
   @media (max-width:860px){
-    .hero-grid{grid-template-columns:1fr;gap:36px;}
-    .contour{max-width:240px;order:-1;}
+    .hero-center{padding:190px 24px 72px;}
     .pillar-grid.cols-5,.pillar-grid.cols-3{grid-template-columns:1fr 1fr;}
     .process-grid{grid-template-columns:1fr;}
     .trust-grid{grid-template-columns:1fr 1fr;}
@@ -351,6 +364,7 @@
       <a href="#treatment-includes">What's Included</a>
       <a href="#therapies">Therapies</a>
       <a href="#conditions">Related Conditions</a>
+      <a href="#conditions-covered">Conditions We Treat</a>
       <a href="#daily-life">Daily Life</a>
       <a href="#why-thailand">Why Thailand</a>
       <a href="#is-it-right">Is It Right for You</a>
@@ -364,34 +378,23 @@
 </header>
 
     <div class="hero-block">
-    <section class="hero" id="top" style="padding-top:56px;">
-      <div class="container-wide hero-grid">
-        <div>
-          <span class="eyebrow">Residential Mental Health Care · Thailand</span>
-          <h1>Depression and Mental Health Retreat in Thailand</h1>
-          <p class="hero-lede">
-            A mental health retreat in Thailand can offer a structured, private environment for people seeking
-            dedicated support for depression and related concerns. Residential programs may combine professional
-            assessment, individual and group therapy, steady daily routines, and wellbeing-focused activities,
-            tailored to what each person needs.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://www.thecabinchiangmai.com/pricing/">Explore Treatment Options</a>
-            <a class="btn btn-secondary" href="#faq">Speak With Our Team</a>
-          </div>
-        </div>
-        <div class="contour" aria-hidden="true">
-          <svg viewBox="0 0 320 320" fill="none">
-            <circle cx="225" cy="72" r="30" fill="var(--gold-pale)" stroke="var(--gold)" stroke-width="1.4"/>
-            <circle cx="225" cy="72" r="18" fill="var(--gold)" opacity="0.45"/>
-            <circle cx="88" cy="98" r="2" fill="var(--ink-faint)"/>
-            <circle cx="104" cy="90" r="1.6" fill="var(--ink-faint)"/>
-            <circle cx="120" cy="100" r="1.4" fill="var(--ink-faint)"/>
-            <path d="M0 152 C45 130 95 142 160 138 C220 134 270 150 320 138 L320 320 L0 320 Z" fill="var(--moss-pale)"/>
-            <path d="M0 178 C55 156 110 170 175 162 C230 154 280 172 320 162 L320 320 L0 320 Z" fill="var(--moss)" opacity="0.55"/>
-            <path d="M0 204 C65 180 130 194 195 184 C245 176 285 192 320 184 L320 320 L0 320 Z" fill="var(--moss)" opacity="0.85"/>
-            <path d="M0 232 C80 208 155 222 210 210 C255 202 290 216 320 208 L320 320 L0 320 Z" fill="var(--moss-deep)"/>
-          </svg>
+    <section class="hero" id="top">
+      <div class="hero-bg">
+        <img src="hero-bg.jpg" alt="A tropical residential retreat setting in Thailand" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container-wide hero-center">
+        <span class="eyebrow">Residential Mental Health Care · Thailand</span>
+        <h1>Depression and Mental Health Retreat in Thailand</h1>
+        <p class="hero-lede">
+          A mental health retreat in Thailand can offer a structured, private environment for people seeking
+          dedicated support for depression and related concerns. Residential programs may combine professional
+          assessment, individual and group therapy, steady daily routines, and wellbeing-focused activities,
+          tailored to what each person needs.
+        </p>
+        <div class="cta-row center">
+          <a class="btn btn-primary" href="https://www.thecabinchiangmai.com/pricing/">Explore Treatment Options</a>
+          <a class="btn btn-secondary" href="#faq">Speak With Our Team</a>
         </div>
       </div>
     </section>
@@ -481,35 +484,61 @@
           <p class="dek">A mental health retreat in Thailand helps with depression through structured care, professional support, therapeutic intervention, healthy routines, and space away from everyday pressures — each addressing a different part of recovery within a supervised residential setting.</p>
         </div>
 
-        <div class="pillar-grid cols-5">
-          <div class="pillar-card">
-            <div class="idx">01</div>
-            <h3>Structured Care</h3>
-            <p>Structured care organizes daily activities around therapy sessions, rest, and wellness practices. Consistent scheduling can reduce uncertainty and support emotional stability throughout the recovery process at a residential facility.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="idx">02</div>
-            <h3>Professional Support</h3>
-            <p>Professional support comes from licensed therapists and medical staff who monitor progress. Ongoing supervision allows treatment plans to be adjusted based on patient needs and observed symptoms.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="idx">03</div>
-            <h3>Therapeutic Intervention</h3>
-            <p>Therapeutic intervention includes individual counseling and group sessions targeting depressive symptoms. Evidence-based approaches may help patients process emotions and develop coping strategies during treatment.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="idx">04</div>
-            <h3>Healthy Routine</h3>
-            <p>Healthy routines incorporate balanced meals, physical activity, and regular sleep patterns. Restoring basic daily habits can support both physical health and emotional regulation during recovery.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="idx">05</div>
-            <h3>Space Away From Pressures</h3>
-            <p>Space away from everyday pressures removes patients from familiar stressors and triggers. Distance from routine obligations may allow greater focus on reflection and healing.</p>
-          </div>
+        <div class="tabs-row" role="tablist" id="helpsTabs">
+          <button class="tab-pill" type="button" aria-selected="true">Structured Care</button>
+          <button class="tab-pill" type="button" aria-selected="false">Professional Support</button>
+          <button class="tab-pill" type="button" aria-selected="false">Therapeutic Intervention</button>
+          <button class="tab-pill" type="button" aria-selected="false">Healthy Routine</button>
+          <button class="tab-pill" type="button" aria-selected="false">Space Away</button>
         </div>
 
-        <div class="callout">
+        <div class="carousel-wrap">
+          <button class="carousel-arrow" id="helpsPrev" type="button" aria-label="Previous" disabled>
+            <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="carousel-track" id="helpsTrack">
+            <article class="carousel-card is-active">
+              <div class="carousel-card-media"><img src="cards/card-yoga.jpg" alt="Group wellness session at a residential retreat"></div>
+              <div class="carousel-card-body">
+                <h3>Structured Care</h3>
+                <p>Structured care organizes daily activities around therapy sessions, rest, and wellness practices. Consistent scheduling can reduce uncertainty and support emotional stability throughout the recovery process at a residential facility.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-group.jpg" alt="Clinical staff supporting a patient"></div>
+              <div class="carousel-card-body">
+                <h3>Professional Support</h3>
+                <p>Professional support comes from licensed therapists and medical staff who monitor progress. Ongoing supervision allows treatment plans to be adjusted based on patient needs and observed symptoms.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-restaurant.jpg" alt="Residential facility dining area"></div>
+              <div class="carousel-card-body">
+                <h3>Therapeutic Intervention</h3>
+                <p>Therapeutic intervention includes individual counseling and group sessions targeting depressive symptoms. Evidence-based approaches may help patients process emotions and develop coping strategies during treatment.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-yoga.jpg" alt="Wellness activity at a residential retreat"></div>
+              <div class="carousel-card-body">
+                <h3>Healthy Routine</h3>
+                <p>Healthy routines incorporate balanced meals, physical activity, and regular sleep patterns. Restoring basic daily habits can support both physical health and emotional regulation during recovery.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-restaurant.jpg" alt="Calm residential facility setting"></div>
+              <div class="carousel-card-body">
+                <h3>Space Away From Pressures</h3>
+                <p>Space away from everyday pressures removes patients from familiar stressors and triggers. Distance from routine obligations may allow greater focus on reflection and healing.</p>
+              </div>
+            </article>
+          </div>
+          <button class="carousel-arrow" id="helpsNext" type="button" aria-label="Next">
+            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <div class="callout" style="max-width:none;">
           <h4>Treatment Is Personal</h4>
           <p>Residential treatment does not suit every patient experiencing depression. The appropriate level of care depends on symptom severity, personal circumstances, clinical needs, and professional assessment.</p>
         </div>
@@ -750,10 +779,98 @@
       </div>
     </section>
 
+    <section id="conditions-covered">
+      <div class="container-wide">
+        <div class="section-head" style="max-width:760px;margin-left:auto;margin-right:auto;text-align:center;">
+          <span class="eyebrow">05 — Conditions We Treat</span>
+          <h2>What Mental Health Conditions do we Cover in Thailand?</h2>
+          <p class="dek" style="margin-left:auto;margin-right:auto;">Mental health conditions treated across Thailand span a wide range of emotional, psychological, and behavioral difficulties. Treatment settings range from public hospitals to private clinics and specialized rehabilitation centers, depending on severity.</p>
+        </div>
+
+        <div class="tabs-row" role="tablist" id="conditionsTabs">
+          <button class="tab-pill" type="button" aria-selected="true">Anxiety</button>
+          <button class="tab-pill" type="button" aria-selected="false">Depression</button>
+          <button class="tab-pill" type="button" aria-selected="false">Trauma &amp; PTSD</button>
+          <button class="tab-pill" type="button" aria-selected="false">Burnout</button>
+          <button class="tab-pill" type="button" aria-selected="false">Mood Disorders</button>
+          <button class="tab-pill" type="button" aria-selected="false">OCD</button>
+          <button class="tab-pill" type="button" aria-selected="false">Eating Disorders</button>
+          <button class="tab-pill" type="button" aria-selected="false">Substance Use</button>
+        </div>
+
+        <div class="carousel-wrap">
+          <button class="carousel-arrow" id="conditionsPrev" type="button" aria-label="Previous condition" disabled>
+            <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="carousel-track" id="conditionsTrack">
+            <article class="carousel-card is-active">
+              <div class="carousel-card-media"><img src="cards/card-yoga.jpg" alt="Wellness session for anxiety support"></div>
+              <div class="carousel-card-body">
+                <h3>Anxiety</h3>
+                <p>Anxiety involves persistent worry, nervousness, or fear that can interfere with daily functioning. Physical symptoms such as rapid heartbeat and restlessness frequently accompany the emotional distress.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-group.jpg" alt="Clinical support for depression"></div>
+              <div class="carousel-card-body">
+                <h3>Depression</h3>
+                <p>Depression involves persistent low mood, loss of interest, and reduced energy that can affect motivation and daily activity. Symptoms often build gradually and can persist for weeks or months without treatment.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-restaurant.jpg" alt="Calm residential setting for trauma recovery"></div>
+              <div class="carousel-card-body">
+                <h3>Trauma and PTSD</h3>
+                <p>Trauma and PTSD develop after a distressing or life-threatening event that continues to affect emotional and psychological functioning. Flashbacks, hypervigilance, and avoidance behaviors commonly accompany this condition.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-yoga.jpg" alt="Wellness activity supporting burnout recovery"></div>
+              <div class="carousel-card-body">
+                <h3>Burnout</h3>
+                <p>Burnout results from prolonged stress, often work-related, leading to emotional exhaustion and reduced motivation. Cynicism and detachment from responsibilities frequently accompany this state.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-group.jpg" alt="Clinical support for mood disorders"></div>
+              <div class="carousel-card-body">
+                <h3>Mood Disorders</h3>
+                <p>Mood disorders involve significant shifts in emotional state, including depressive and manic episodes in some cases. These shifts can affect energy, sleep, and daily decision-making.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-restaurant.jpg" alt="Residential setting for OCD treatment"></div>
+              <div class="carousel-card-body">
+                <h3>Obsessive-Compulsive Disorder (OCD)</h3>
+                <p>Obsessive-compulsive disorder involves intrusive thoughts paired with repetitive behaviors aimed at reducing distress. These patterns can consume significant time and interfere with daily responsibilities.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-yoga.jpg" alt="Wellness support for eating disorders"></div>
+              <div class="carousel-card-body">
+                <h3>Eating Disorders</h3>
+                <p>Eating disorders involve a disrupted relationship with food, weight, or body image that affects physical and emotional health. These conditions require specialized treatment addressing both psychological and physical dimensions.</p>
+              </div>
+            </article>
+            <article class="carousel-card">
+              <div class="carousel-card-media"><img src="cards/card-group.jpg" alt="Clinical support for substance use disorders"></div>
+              <div class="carousel-card-body">
+                <h3>Substance Use Disorders</h3>
+                <p>Substance use disorders involve compulsive use of drugs or alcohol despite clear harm to health and daily functioning. Treatment often addresses both the substance use and any underlying mental health conditions.</p>
+              </div>
+            </article>
+          </div>
+          <button class="carousel-arrow" id="conditionsNext" type="button" aria-label="Next condition">
+            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section id="daily-life">
       <div class="container-wide">
         <div class="section-head">
-          <span class="eyebrow">05 — A Typical Day</span>
+          <span class="eyebrow">06 — A Typical Day</span>
           <h2>What is Daily Life Like at a Mental Health Retreat?</h2>
           <p class="dek">Daily life generally follows a structured rhythm built around treatment, wellbeing, rest, and recovery — bringing together therapy, professional check-ins, meals, wellness activities, personal time, and rest.</p>
         </div>
@@ -827,7 +944,7 @@
     <section id="why-thailand">
       <div class="container-wide">
         <div class="section-head">
-          <span class="eyebrow">06 — Setting &amp; Location</span>
+          <span class="eyebrow">07 — Setting &amp; Location</span>
           <h2>Why Choose Thailand for Depression Treatment?</h2>
           <p class="dek">Thailand can offer a distinctive combination of private mental health care, established experience supporting international patients, and a calm environment — factors worth weighing alongside clinical suitability and individual treatment needs.</p>
         </div>
@@ -883,7 +1000,7 @@
     <section id="is-it-right">
       <div class="container-wide">
         <div class="section-head">
-          <span class="eyebrow">07 — Deciding on Care</span>
+          <span class="eyebrow">08 — Deciding on Care</span>
           <h2>How Do You Know if a Depression Retreat Is Right for You?</h2>
         </div>
         <div style="max-width:720px;">
@@ -903,7 +1020,7 @@
     <section id="after-treatment">
       <div class="container-wide">
         <div class="section-head">
-          <span class="eyebrow">08 — Aftercare &amp; Recovery</span>
+          <span class="eyebrow">09 — Aftercare &amp; Recovery</span>
           <h2>What Happens After Depression Treatment?</h2>
           <p class="dek">A structured transition process follows residential care. Continued therapy, relapse prevention, healthy routines, and support networks work together to sustain progress, with aftercare planning guiding each stage.</p>
         </div>
@@ -1055,7 +1172,7 @@
     <section id="faq">
       <div class="container-wide">
         <div class="section-head">
-          <span class="eyebrow">09 — Frequently Asked</span>
+          <span class="eyebrow">10 — Frequently Asked</span>
           <h2>Common Questions About Depression &amp; Mental Health Retreats</h2>
           <p class="dek">Answers grouped by the way people most often search for this kind of care.</p>
         </div>
@@ -1175,6 +1292,61 @@
     </footer>
 
 <script>
+  // tabs + card carousel (reusable)
+  function initTabsCarousel(tabsWrapId, trackId, prevId, nextId){
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('#' + tabsWrapId + ' .tab-pill'));
+    var track = document.getElementById(trackId);
+    var prev = document.getElementById(prevId);
+    var next = document.getElementById(nextId);
+    if (!track || !tabs.length) return;
+    var cards = Array.prototype.slice.call(track.querySelectorAll('.carousel-card'));
+
+    function setActive(index){
+      tabs.forEach(function(t, i){ t.setAttribute('aria-selected', i === index ? 'true' : 'false'); });
+      cards.forEach(function(c, i){ c.classList.toggle('is-active', i === index); });
+    }
+    function updateArrows(){
+      var max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    }
+    tabs.forEach(function(tab, i){
+      tab.addEventListener('click', function(){
+        cards[i].scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+        setActive(i);
+        updateArrows();
+      });
+    });
+    if (prev) prev.addEventListener('click', function(){ track.scrollBy({ left: -420, behavior: 'auto' }); updateArrows(); });
+    if (next) next.addEventListener('click', function(){ track.scrollBy({ left: 420, behavior: 'auto' }); updateArrows(); });
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+            setActive(cards.indexOf(entry.target));
+          }
+        });
+      }, { root: track, threshold: [0.6] });
+      cards.forEach(function(c){ obs.observe(c); });
+    }
+    track.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+  }
+  initTabsCarousel('conditionsTabs', 'conditionsTrack', 'conditionsPrev', 'conditionsNext');
+  initTabsCarousel('helpsTabs', 'helpsTrack', 'helpsPrev', 'helpsNext');
+
+  // topnav solid background on scroll
+  (function(){
+    var nav = document.querySelector('.topnav');
+    if (!nav) return;
+    function update(){
+      nav.classList.toggle('solid', window.scrollY > 40);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
   // topnav horizontal scroll arrows
   (function(){
     var track = document.getElementById('toc');
